@@ -24,13 +24,9 @@ salbits[2] << microprocesador:Mircoprocesador.sbits[2]
 
 |top|microprocesador:Mircoprocesador
 clk => fetch:Fetch.clk
-clk => ram:memoriaA.clkRd
-clk => ram:memoriaB.clkRd
-clk => ram:memoriaA.clkWr
+clk => regs:registers.clkRd
+clk => regs:registers.clkWr
 clk => comb.IN0
-clk => ram:memoriaB.clkWr
-clk => comb.IN0
-reset => comb.IN1
 reset => comb.IN1
 reset => fetch:Fetch.reset
 cs => decoder:Decoder.cs
@@ -421,13 +417,16 @@ d_0[5] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
 d_0[6] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top|microprocesador:Mircoprocesador|ram:memoriaA
+|top|microprocesador:Mircoprocesador|REGs:registers
 AddrWr[0] => AddressWrite[0].DATAIN
 AddrWr[1] => AddressWrite[1].DATAIN
 AddrWr[2] => AddressWrite[2].DATAIN
-AddrRd[0] => AddressRead[0].DATAIN
-AddrRd[1] => AddressRead[1].DATAIN
-AddrRd[2] => AddressRead[2].DATAIN
+AddrRdA[0] => AddressReadA[0].DATAIN
+AddrRdA[1] => AddressReadA[1].DATAIN
+AddrRdA[2] => AddressReadA[2].DATAIN
+AddrRdB[0] => AddressReadB[0].DATAIN
+AddrRdB[1] => AddressReadB[1].DATAIN
+AddrRdB[2] => AddressReadB[2].DATAIN
 clkWr => memory~6.CLK
 clkWr => memory~0.CLK
 clkWr => memory~1.CLK
@@ -442,12 +441,18 @@ clkWr => dataInBuf[0].CLK
 clkWr => dataInBuf[1].CLK
 clkWr => dataInBuf[2].CLK
 clkWr => memory.CLK0
-clkRd => dataout[0]~reg0.CLK
-clkRd => dataout[1]~reg0.CLK
-clkRd => dataout[2]~reg0.CLK
-clkRd => AddressRead[0].CLK
-clkRd => AddressRead[1].CLK
-clkRd => AddressRead[2].CLK
+clkRd => dataB[0]~reg0.CLK
+clkRd => dataB[1]~reg0.CLK
+clkRd => dataB[2]~reg0.CLK
+clkRd => AddressReadB[0].CLK
+clkRd => AddressReadB[1].CLK
+clkRd => AddressReadB[2].CLK
+clkRd => dataA[0]~reg0.CLK
+clkRd => dataA[1]~reg0.CLK
+clkRd => dataA[2]~reg0.CLK
+clkRd => AddressReadA[0].CLK
+clkRd => AddressReadA[1].CLK
+clkRd => AddressReadA[2].CLK
 wrEn => memory~6.DATAIN
 wrEn => AddressWrite[0].ENA
 wrEn => AddressWrite[1].ENA
@@ -459,52 +464,12 @@ wrEn => memory.WE
 dataIn[0] => dataInBuf[0].DATAIN
 dataIn[1] => dataInBuf[1].DATAIN
 dataIn[2] => dataInBuf[2].DATAIN
-dataout[0] <= dataout[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-dataout[1] <= dataout[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-dataout[2] <= dataout[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|top|microprocesador:Mircoprocesador|ram:memoriaB
-AddrWr[0] => AddressWrite[0].DATAIN
-AddrWr[1] => AddressWrite[1].DATAIN
-AddrWr[2] => AddressWrite[2].DATAIN
-AddrRd[0] => AddressRead[0].DATAIN
-AddrRd[1] => AddressRead[1].DATAIN
-AddrRd[2] => AddressRead[2].DATAIN
-clkWr => memory~6.CLK
-clkWr => memory~0.CLK
-clkWr => memory~1.CLK
-clkWr => memory~2.CLK
-clkWr => memory~3.CLK
-clkWr => memory~4.CLK
-clkWr => memory~5.CLK
-clkWr => AddressWrite[0].CLK
-clkWr => AddressWrite[1].CLK
-clkWr => AddressWrite[2].CLK
-clkWr => dataInBuf[0].CLK
-clkWr => dataInBuf[1].CLK
-clkWr => dataInBuf[2].CLK
-clkWr => memory.CLK0
-clkRd => dataout[0]~reg0.CLK
-clkRd => dataout[1]~reg0.CLK
-clkRd => dataout[2]~reg0.CLK
-clkRd => AddressRead[0].CLK
-clkRd => AddressRead[1].CLK
-clkRd => AddressRead[2].CLK
-wrEn => memory~6.DATAIN
-wrEn => AddressWrite[0].ENA
-wrEn => AddressWrite[1].ENA
-wrEn => AddressWrite[2].ENA
-wrEn => dataInBuf[0].ENA
-wrEn => dataInBuf[1].ENA
-wrEn => dataInBuf[2].ENA
-wrEn => memory.WE
-dataIn[0] => dataInBuf[0].DATAIN
-dataIn[1] => dataInBuf[1].DATAIN
-dataIn[2] => dataInBuf[2].DATAIN
-dataout[0] <= dataout[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-dataout[1] <= dataout[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-dataout[2] <= dataout[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dataA[0] <= dataA[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dataA[1] <= dataA[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dataA[2] <= dataA[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dataB[0] <= dataB[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dataB[1] <= dataB[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dataB[2] <= dataB[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |top|microprocesador:Mircoprocesador|bcd7seg:numA
