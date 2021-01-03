@@ -1,0 +1,27 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_UNSIGNED.all;
+
+entity top is
+port(
+	clk,reset,cs: in std_logic;
+ R				: out std_logic_vector (3 downto 0);
+ G			: out std_logic_vector (3 downto 0);
+ B				: out std_logic_vector (3 downto 0);
+
+ HS			: out std_logic;
+ VS			: out std_logic
+	); --que operacion es Sum Rest, And, OR Xor
+end top;
+
+architecture behavior of topr is
+
+signal Asal7seg,Bsal7seg,Csal7seg_1,Csal7seg_0: out std_logic_vector(6 downto 0);
+signal op: out std_logic_vector(3 downto 0);
+
+BEGIN
+
+Mircoprocesador: entity work.microprocesador(behavior) port map (clk,reset,cs,Asal7seg,Bsal7seg,Csal7seg_1,Csal7seg_0,op);
+salVGA: entity work.VGA(behavior) port map (bus_instruc,bus_datosA,bus_datosB,s,s2,cin,cs);
+
+end architecture behavior;

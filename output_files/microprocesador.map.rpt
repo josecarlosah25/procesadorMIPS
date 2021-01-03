@@ -1,0 +1,1126 @@
+Analysis & Synthesis report for microprocesador
+Sun Jan 03 01:52:25 2021
+Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: VGA:salVGA|vga_controller:controllerVGA
+ 14. Parameter Settings for User Entity Instance: VGA:salVGA|hw_image_generator:displayA
+ 15. Parameter Settings for User Entity Instance: VGA:salVGA|hw_image_generator:displayB
+ 16. Parameter Settings for User Entity Instance: VGA:salVGA|hw_image_generator_OP:displayOp1
+ 17. Parameter Settings for User Entity Instance: VGA:salVGA|hw_image_generator_OP:displayOp2
+ 18. Parameter Settings for User Entity Instance: VGA:salVGA|hw_image_generator:displayUnoExtra
+ 19. Parameter Settings for User Entity Instance: VGA:salVGA|hw_image_generator:displayR1
+ 20. Parameter Settings for User Entity Instance: VGA:salVGA|hw_image_generator:displayR0
+ 21. Parameter Settings for User Entity Instance: VGA:salVGA|hw_image_generator_OP:displayIgual
+ 22. Parameter Settings for User Entity Instance: VGA:salVGA|hw_image_generator:displayInstruccion0
+ 23. Parameter Settings for User Entity Instance: VGA:salVGA|hw_image_generator:displayInstruccion1
+ 24. Port Connectivity Checks: "VGA:salVGA|hw_image_generator:displayInstruccion1"
+ 25. Port Connectivity Checks: "VGA:salVGA|hw_image_generator:displayInstruccion0"
+ 26. Port Connectivity Checks: "VGA:salVGA|hw_image_generator_OP:displayIgual"
+ 27. Port Connectivity Checks: "VGA:salVGA|hw_image_generator:displayR0"
+ 28. Port Connectivity Checks: "VGA:salVGA|hw_image_generator:displayR1"
+ 29. Port Connectivity Checks: "VGA:salVGA|hw_image_generator:displayUnoExtra"
+ 30. Port Connectivity Checks: "VGA:salVGA|hw_image_generator_OP:displayOp2"
+ 31. Port Connectivity Checks: "VGA:salVGA|hw_image_generator_OP:displayOp1"
+ 32. Port Connectivity Checks: "VGA:salVGA|hw_image_generator:displayB"
+ 33. Port Connectivity Checks: "VGA:salVGA|hw_image_generator:displayA"
+ 34. Port Connectivity Checks: "VGA:salVGA|vga_controller:controllerVGA"
+ 35. Port Connectivity Checks: "microprocesador:Mircoprocesador|bcd7seg:numB"
+ 36. Port Connectivity Checks: "microprocesador:Mircoprocesador|bcd7seg:numA"
+ 37. Port Connectivity Checks: "microprocesador:Mircoprocesador|alu:Alu"
+ 38. Port Connectivity Checks: "microprocesador:Mircoprocesador|fetch:Fetch"
+ 39. Post-Synthesis Netlist Statistics for Top Partition
+ 40. Elapsed Time Per Partition
+ 41. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2019  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sun Jan 03 01:52:24 2021       ;
+; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
+; Revision Name                      ; microprocesador                             ;
+; Top-level Entity Name              ; top                                         ;
+; Family                             ; MAX 10                                      ;
+; Total logic elements               ; 533                                         ;
+;     Total combinational functions  ; 490                                         ;
+;     Dedicated logic registers      ; 143                                         ;
+; Total registers                    ; 143                                         ;
+; Total pins                         ; 20                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 10M50DAF484C7G     ;                    ;
+; Top-level entity name                                            ; top                ; microprocesador    ;
+; Family name                                                      ; MAX 10             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                            ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                     ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------+---------+
+; Gen25MHz.vhd                     ; yes             ; User VHDL File  ; C:/Users/carlo/Desktop/VLSI/Proyecto05/Gen25MHz.vhd              ;         ;
+; vga_controller.vhd               ; yes             ; User VHDL File  ; C:/Users/carlo/Desktop/VLSI/Proyecto05/vga_controller.vhd        ;         ;
+; interpreterOperador.vhd          ; yes             ; User VHDL File  ; C:/Users/carlo/Desktop/VLSI/Proyecto05/interpreterOperador.vhd   ;         ;
+; hw_image_generator_OP.vhd        ; yes             ; User VHDL File  ; C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd ;         ;
+; hw_image_generator.vhd           ; yes             ; User VHDL File  ; C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd    ;         ;
+; VGA.vhd                          ; yes             ; User VHDL File  ; C:/Users/carlo/Desktop/VLSI/Proyecto05/VGA.vhd                   ;         ;
+; mux2x1ALU.vhd                    ; yes             ; User VHDL File  ; C:/Users/carlo/Desktop/VLSI/Proyecto05/mux2x1ALU.vhd             ;         ;
+; bcd2x7seg.vhd                    ; yes             ; User VHDL File  ; C:/Users/carlo/Desktop/VLSI/Proyecto05/bcd2x7seg.vhd             ;         ;
+; sum3bit.vhd                      ; yes             ; User VHDL File  ; C:/Users/carlo/Desktop/VLSI/Proyecto05/sum3bit.vhd               ;         ;
+; mux4x1AU.vhd                     ; yes             ; User VHDL File  ; C:/Users/carlo/Desktop/VLSI/Proyecto05/mux4x1AU.vhd              ;         ;
+; bcd7seg.vhd                      ; yes             ; User VHDL File  ; C:/Users/carlo/Desktop/VLSI/Proyecto05/bcd7seg.vhd               ;         ;
+; ram.vhd                          ; yes             ; User VHDL File  ; C:/Users/carlo/Desktop/VLSI/Proyecto05/ram.vhd                   ;         ;
+; ul.vhd                           ; yes             ; User VHDL File  ; C:/Users/carlo/Desktop/VLSI/Proyecto05/ul.vhd                    ;         ;
+; ua.vhd                           ; yes             ; User VHDL File  ; C:/Users/carlo/Desktop/VLSI/Proyecto05/ua.vhd                    ;         ;
+; alu.vhd                          ; yes             ; User VHDL File  ; C:/Users/carlo/Desktop/VLSI/Proyecto05/alu.vhd                   ;         ;
+; relojlento.vhd                   ; yes             ; User VHDL File  ; C:/Users/carlo/Desktop/VLSI/Proyecto05/relojlento.vhd            ;         ;
+; contador.vhd                     ; yes             ; User VHDL File  ; C:/Users/carlo/Desktop/VLSI/Proyecto05/contador.vhd              ;         ;
+; fetchRom.vhd                     ; yes             ; User VHDL File  ; C:/Users/carlo/Desktop/VLSI/Proyecto05/fetchRom.vhd              ;         ;
+; fetch.vhd                        ; yes             ; User VHDL File  ; C:/Users/carlo/Desktop/VLSI/Proyecto05/fetch.vhd                 ;         ;
+; decoder.vhd                      ; yes             ; User VHDL File  ; C:/Users/carlo/Desktop/VLSI/Proyecto05/decoder.vhd               ;         ;
+; microprocesador.vhd              ; yes             ; User VHDL File  ; C:/Users/carlo/Desktop/VLSI/Proyecto05/microprocesador.vhd       ;         ;
+; top.vhd                          ; yes             ; User VHDL File  ; C:/Users/carlo/Desktop/VLSI/Proyecto05/top.vhd                   ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 533       ;
+;                                             ;           ;
+; Total combinational functions               ; 490       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 297       ;
+;     -- 3 input functions                    ; 74        ;
+;     -- <=2 input functions                  ; 119       ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 442       ;
+;     -- arithmetic mode                      ; 48        ;
+;                                             ;           ;
+; Total registers                             ; 143       ;
+;     -- Dedicated logic registers            ; 143       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 20        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 96        ;
+; Total fan-out                               ; 2000      ;
+; Average fan-out                             ; 2.97      ;
++---------------------------------------------+-----------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                          ;
++------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------+-----------------------+--------------+
+; Compilation Hierarchy Node                     ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                             ; Entity Name           ; Library Name ;
++------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------+-----------------------+--------------+
+; |top                                           ; 490 (0)             ; 143 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 20   ; 0            ; 0          ; |top                                                            ; top                   ; work         ;
+;    |VGA:salVGA|                                ; 332 (6)             ; 45 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|VGA:salVGA                                                 ; VGA                   ; work         ;
+;       |Gen25MHz:VGAclk|                        ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|VGA:salVGA|Gen25MHz:VGAclk                                 ; Gen25MHz              ; work         ;
+;       |hw_image_generator:displayA|            ; 52 (52)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|VGA:salVGA|hw_image_generator:displayA                     ; hw_image_generator    ; work         ;
+;       |hw_image_generator:displayB|            ; 31 (31)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|VGA:salVGA|hw_image_generator:displayB                     ; hw_image_generator    ; work         ;
+;       |hw_image_generator:displayInstruccion0| ; 29 (29)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|VGA:salVGA|hw_image_generator:displayInstruccion0          ; hw_image_generator    ; work         ;
+;       |hw_image_generator:displayInstruccion1| ; 13 (13)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|VGA:salVGA|hw_image_generator:displayInstruccion1          ; hw_image_generator    ; work         ;
+;       |hw_image_generator:displayR0|           ; 28 (28)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|VGA:salVGA|hw_image_generator:displayR0                    ; hw_image_generator    ; work         ;
+;       |hw_image_generator:displayR1|           ; 13 (13)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|VGA:salVGA|hw_image_generator:displayR1                    ; hw_image_generator    ; work         ;
+;       |hw_image_generator:displayUnoExtra|     ; 13 (13)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|VGA:salVGA|hw_image_generator:displayUnoExtra              ; hw_image_generator    ; work         ;
+;       |hw_image_generator_OP:displayIgual|     ; 13 (13)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|VGA:salVGA|hw_image_generator_OP:displayIgual              ; hw_image_generator_OP ; work         ;
+;       |hw_image_generator_OP:displayOp1|       ; 54 (54)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|VGA:salVGA|hw_image_generator_OP:displayOp1                ; hw_image_generator_OP ; work         ;
+;       |hw_image_generator_OP:displayOp2|       ; 17 (17)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|VGA:salVGA|hw_image_generator_OP:displayOp2                ; hw_image_generator_OP ; work         ;
+;       |interpreterOperador:operador|           ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|VGA:salVGA|interpreterOperador:operador                    ; interpreterOperador   ; work         ;
+;       |vga_controller:controllerVGA|           ; 59 (59)             ; 44 (44)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|VGA:salVGA|vga_controller:controllerVGA                    ; vga_controller        ; work         ;
+;    |microprocesador:Mircoprocesador|           ; 158 (1)             ; 98 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|microprocesador:Mircoprocesador                            ; microprocesador       ; work         ;
+;       |alu:Alu|                                ; 23 (2)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|microprocesador:Mircoprocesador|alu:Alu                    ; alu                   ; work         ;
+;          |bcd2x7seg:alu7seg|                   ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|microprocesador:Mircoprocesador|alu:Alu|bcd2x7seg:alu7seg  ; bcd2x7seg             ; work         ;
+;          |mux2x1ALU:muxalu|                    ; 6 (6)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|microprocesador:Mircoprocesador|alu:Alu|mux2x1ALU:muxalu   ; mux2x1ALU             ; work         ;
+;          |ua:ua1|                              ; 8 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|microprocesador:Mircoprocesador|alu:Alu|ua:ua1             ; ua                    ; work         ;
+;             |mux4x1AU:u1|                      ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|microprocesador:Mircoprocesador|alu:Alu|ua:ua1|mux4x1AU:u1 ; mux4x1AU              ; work         ;
+;             |sum3bit:u2|                       ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|microprocesador:Mircoprocesador|alu:Alu|ua:ua1|sum3bit:u2  ; sum3bit               ; work         ;
+;       |bcd2x7seg:numIntruccion|                ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|microprocesador:Mircoprocesador|bcd2x7seg:numIntruccion    ; bcd2x7seg             ; work         ;
+;       |fetch:Fetch|                            ; 64 (0)              ; 32 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|microprocesador:Mircoprocesador|fetch:Fetch                ; fetch                 ; work         ;
+;          |contador:u2|                         ; 5 (5)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|microprocesador:Mircoprocesador|fetch:Fetch|contador:u2    ; contador              ; work         ;
+;          |fetchRom:u3|                         ; 10 (10)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|microprocesador:Mircoprocesador|fetch:Fetch|fetchRom:u3    ; fetchRom              ; work         ;
+;          |relojlento:u1|                       ; 49 (49)             ; 28 (28)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1  ; relojlento            ; work         ;
+;       |ram:memoriaA|                           ; 36 (36)             ; 36 (36)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|microprocesador:Mircoprocesador|ram:memoriaA               ; ram                   ; work         ;
+;       |ram:memoriaB|                           ; 27 (27)             ; 30 (30)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|microprocesador:Mircoprocesador|ram:memoriaB               ; ram                   ; work         ;
++------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------+-----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                                  ;
++----------------------------------------------------------+--------------------------------------------------+------------------------+
+; Latch Name                                               ; Latch Enable Signal                              ; Free of Timing Hazards ;
++----------------------------------------------------------+--------------------------------------------------+------------------------+
+; VGA:salVGA|hw_image_generator:displayA|red[0]            ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
+; VGA:salVGA|hw_image_generator:displayB|red[0]            ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
+; VGA:salVGA|hw_image_generator_OP:displayOp1|red[0]       ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
+; VGA:salVGA|hw_image_generator_OP:displayOp2|red[0]       ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
+; VGA:salVGA|hw_image_generator:displayUnoExtra|red[0]     ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
+; VGA:salVGA|hw_image_generator:displayR1|red[0]           ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
+; VGA:salVGA|hw_image_generator:displayR0|red[0]           ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
+; VGA:salVGA|hw_image_generator_OP:displayIgual|red[0]     ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
+; VGA:salVGA|hw_image_generator:displayInstruccion0|red[0] ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
+; VGA:salVGA|hw_image_generator:displayInstruccion1|red[0] ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
+; VGA:salVGA|hw_image_generator:displayA|red[1]            ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
+; VGA:salVGA|hw_image_generator:displayB|red[1]            ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
+; VGA:salVGA|hw_image_generator_OP:displayOp1|red[1]       ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
+; VGA:salVGA|hw_image_generator:displayR1|red[1]           ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
+; VGA:salVGA|hw_image_generator:displayR0|red[1]           ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
+; VGA:salVGA|hw_image_generator_OP:displayIgual|red[1]     ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
+; VGA:salVGA|hw_image_generator:displayInstruccion0|red[1] ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
+; VGA:salVGA|hw_image_generator:displayInstruccion1|red[1] ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
+; VGA:salVGA|hw_image_generator:displayA|red[2]            ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
+; VGA:salVGA|hw_image_generator:displayB|red[2]            ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
+; VGA:salVGA|hw_image_generator_OP:displayOp1|red[2]       ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
+; VGA:salVGA|hw_image_generator:displayR1|red[2]           ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
+; VGA:salVGA|hw_image_generator:displayR0|red[2]           ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
+; VGA:salVGA|hw_image_generator_OP:displayIgual|red[2]     ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
+; VGA:salVGA|hw_image_generator:displayInstruccion0|red[2] ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
+; VGA:salVGA|hw_image_generator:displayInstruccion1|red[2] ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
+; VGA:salVGA|hw_image_generator:displayA|red[3]            ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
+; VGA:salVGA|hw_image_generator:displayB|red[3]            ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
+; VGA:salVGA|hw_image_generator_OP:displayOp1|red[3]       ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
+; VGA:salVGA|hw_image_generator:displayR1|red[3]           ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
+; VGA:salVGA|hw_image_generator:displayR0|red[3]           ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
+; VGA:salVGA|hw_image_generator_OP:displayIgual|red[3]     ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
+; VGA:salVGA|hw_image_generator:displayInstruccion0|red[3] ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
+; VGA:salVGA|hw_image_generator:displayInstruccion1|red[3] ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
+; Number of user-specified and inferred latches = 34       ;                                                  ;                        ;
++----------------------------------------------------------+--------------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                      ;
++--------------------------------------------------------------+--------------------------------------------------------------------------+
+; Register name                                                ; Reason for Removal                                                       ;
++--------------------------------------------------------------+--------------------------------------------------------------------------+
+; VGA:salVGA|vga_controller:controllerVGA|column[10..30]       ; Stuck at GND due to stuck port data_in                                   ;
+; VGA:salVGA|vga_controller:controllerVGA|row[10..30]          ; Stuck at GND due to stuck port data_in                                   ;
+; microprocesador:Mircoprocesador|ram:memoriaB|dataInBuf[0]    ; Merged with microprocesador:Mircoprocesador|ram:memoriaA|dataInBuf[0]    ;
+; microprocesador:Mircoprocesador|ram:memoriaB|dataInBuf[1]    ; Merged with microprocesador:Mircoprocesador|ram:memoriaA|dataInBuf[1]    ;
+; microprocesador:Mircoprocesador|ram:memoriaB|dataInBuf[2]    ; Merged with microprocesador:Mircoprocesador|ram:memoriaA|dataInBuf[2]    ;
+; microprocesador:Mircoprocesador|ram:memoriaB|AddressWrite[0] ; Merged with microprocesador:Mircoprocesador|ram:memoriaA|AddressWrite[0] ;
+; microprocesador:Mircoprocesador|ram:memoriaB|AddressWrite[1] ; Merged with microprocesador:Mircoprocesador|ram:memoriaA|AddressWrite[1] ;
+; microprocesador:Mircoprocesador|ram:memoriaB|AddressWrite[2] ; Merged with microprocesador:Mircoprocesador|ram:memoriaA|AddressWrite[2] ;
+; VGA:salVGA|vga_controller:controllerVGA|row[9]               ; Stuck at GND due to stuck port data_in                                   ;
+; Total Number of Removed Registers = 49                       ;                                                                          ;
++--------------------------------------------------------------+--------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 143   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 75    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------+
+; Inverted Register Statistics                                 ;
++----------------------------------------------------+---------+
+; Inverted Register                                  ; Fan out ;
++----------------------------------------------------+---------+
+; VGA:salVGA|vga_controller:controllerVGA|row[0]     ; 7       ;
+; VGA:salVGA|vga_controller:controllerVGA|row[31]    ; 15      ;
+; VGA:salVGA|vga_controller:controllerVGA|column[31] ; 7       ;
+; VGA:salVGA|vga_controller:controllerVGA|column[0]  ; 8       ;
+; Total number of inverted registers = 4             ;         ;
++----------------------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------+
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |top|VGA:salVGA|vga_controller:controllerVGA|v_count                    ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |top|microprocesador:Mircoprocesador|alu:Alu|ua:ua1|mux4x1AU:u1|Mux1    ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |top|microprocesador:Mircoprocesador|alu:Alu|mux2x1ALU:muxalu|salALU[0] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: VGA:salVGA|vga_controller:controllerVGA ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; h_pulse        ; 96    ; Signed Integer                                              ;
+; h_bp           ; 48    ; Signed Integer                                              ;
+; h_pixels       ; 640   ; Signed Integer                                              ;
+; h_fp           ; 16    ; Signed Integer                                              ;
+; h_pol          ; '0'   ; Enumerated                                                  ;
+; v_pulse        ; 2     ; Signed Integer                                              ;
+; v_bp           ; 33    ; Signed Integer                                              ;
+; v_pixels       ; 480   ; Signed Integer                                              ;
+; v_fp           ; 10    ; Signed Integer                                              ;
+; v_pol          ; '0'   ; Enumerated                                                  ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: VGA:salVGA|hw_image_generator:displayA ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; pixels_y       ; 478   ; Signed Integer                                             ;
+; pixels_x       ; 600   ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: VGA:salVGA|hw_image_generator:displayB ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; pixels_y       ; 478   ; Signed Integer                                             ;
+; pixels_x       ; 600   ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: VGA:salVGA|hw_image_generator_OP:displayOp1 ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; pixels_y       ; 478   ; Signed Integer                                                  ;
+; pixels_x       ; 600   ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: VGA:salVGA|hw_image_generator_OP:displayOp2 ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; pixels_y       ; 478   ; Signed Integer                                                  ;
+; pixels_x       ; 600   ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: VGA:salVGA|hw_image_generator:displayUnoExtra ;
++----------------+-------+-------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                              ;
++----------------+-------+-------------------------------------------------------------------+
+; pixels_y       ; 478   ; Signed Integer                                                    ;
+; pixels_x       ; 600   ; Signed Integer                                                    ;
++----------------+-------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: VGA:salVGA|hw_image_generator:displayR1 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; pixels_y       ; 478   ; Signed Integer                                              ;
+; pixels_x       ; 600   ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: VGA:salVGA|hw_image_generator:displayR0 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; pixels_y       ; 478   ; Signed Integer                                              ;
+; pixels_x       ; 600   ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: VGA:salVGA|hw_image_generator_OP:displayIgual ;
++----------------+-------+-------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                              ;
++----------------+-------+-------------------------------------------------------------------+
+; pixels_y       ; 478   ; Signed Integer                                                    ;
+; pixels_x       ; 600   ; Signed Integer                                                    ;
++----------------+-------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: VGA:salVGA|hw_image_generator:displayInstruccion0 ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; pixels_y       ; 478   ; Signed Integer                                                        ;
+; pixels_x       ; 600   ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: VGA:salVGA|hw_image_generator:displayInstruccion1 ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; pixels_y       ; 478   ; Signed Integer                                                        ;
+; pixels_x       ; 600   ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Port Connectivity Checks: "VGA:salVGA|hw_image_generator:displayInstruccion1" ;
++-------------+-------+----------+----------------------------------------------+
+; Port        ; Type  ; Severity ; Details                                      ;
++-------------+-------+----------+----------------------------------------------+
+; pivr[5..4]  ; Input ; Info     ; Stuck at VCC                                 ;
+; pivr[31..6] ; Input ; Info     ; Stuck at GND                                 ;
+; pivr[3..2]  ; Input ; Info     ; Stuck at GND                                 ;
+; pivr[1]     ; Input ; Info     ; Stuck at VCC                                 ;
+; pivr[0]     ; Input ; Info     ; Stuck at GND                                 ;
+; pivc[7..3]  ; Input ; Info     ; Stuck at VCC                                 ;
+; pivc[31..8] ; Input ; Info     ; Stuck at GND                                 ;
+; pivc[2]     ; Input ; Info     ; Stuck at GND                                 ;
+; pivc[1]     ; Input ; Info     ; Stuck at VCC                                 ;
+; pivc[0]     ; Input ; Info     ; Stuck at GND                                 ;
++-------------+-------+----------+----------------------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Port Connectivity Checks: "VGA:salVGA|hw_image_generator:displayInstruccion0" ;
++-------------+-------+----------+----------------------------------------------+
+; Port        ; Type  ; Severity ; Details                                      ;
++-------------+-------+----------+----------------------------------------------+
+; pivr[5..4]  ; Input ; Info     ; Stuck at VCC                                 ;
+; pivr[31..6] ; Input ; Info     ; Stuck at GND                                 ;
+; pivr[3..2]  ; Input ; Info     ; Stuck at GND                                 ;
+; pivr[1]     ; Input ; Info     ; Stuck at VCC                                 ;
+; pivr[0]     ; Input ; Info     ; Stuck at GND                                 ;
+; pivc[31..9] ; Input ; Info     ; Stuck at GND                                 ;
+; pivc[5..0]  ; Input ; Info     ; Stuck at GND                                 ;
+; pivc[8]     ; Input ; Info     ; Stuck at VCC                                 ;
+; pivc[7]     ; Input ; Info     ; Stuck at GND                                 ;
+; pivc[6]     ; Input ; Info     ; Stuck at VCC                                 ;
++-------------+-------+----------+----------------------------------------------+
+
+
++---------------------------------------------------------------------------+
+; Port Connectivity Checks: "VGA:salVGA|hw_image_generator_OP:displayIgual" ;
++-------------+-------+----------+------------------------------------------+
+; Port        ; Type  ; Severity ; Details                                  ;
++-------------+-------+----------+------------------------------------------+
+; opdis[3..0] ; Input ; Info     ; Stuck at GND                             ;
+; opdis[5]    ; Input ; Info     ; Stuck at GND                             ;
+; opdis[4]    ; Input ; Info     ; Stuck at VCC                             ;
+; pivr[7..3]  ; Input ; Info     ; Stuck at VCC                             ;
+; pivr[31..8] ; Input ; Info     ; Stuck at GND                             ;
+; pivr[2]     ; Input ; Info     ; Stuck at GND                             ;
+; pivr[1]     ; Input ; Info     ; Stuck at VCC                             ;
+; pivr[0]     ; Input ; Info     ; Stuck at GND                             ;
+; pivc[8..7]  ; Input ; Info     ; Stuck at VCC                             ;
+; pivc[2..1]  ; Input ; Info     ; Stuck at VCC                             ;
+; pivc[31..9] ; Input ; Info     ; Stuck at GND                             ;
+; pivc[6..3]  ; Input ; Info     ; Stuck at GND                             ;
+; pivc[0]     ; Input ; Info     ; Stuck at GND                             ;
++-------------+-------+----------+------------------------------------------+
+
+
++---------------------------------------------------------------------+
+; Port Connectivity Checks: "VGA:salVGA|hw_image_generator:displayR0" ;
++--------------+-------+----------+-----------------------------------+
+; Port         ; Type  ; Severity ; Details                           ;
++--------------+-------+----------+-----------------------------------+
+; pivr[7..3]   ; Input ; Info     ; Stuck at VCC                      ;
+; pivr[31..8]  ; Input ; Info     ; Stuck at GND                      ;
+; pivr[2]      ; Input ; Info     ; Stuck at GND                      ;
+; pivr[1]      ; Input ; Info     ; Stuck at VCC                      ;
+; pivr[0]      ; Input ; Info     ; Stuck at GND                      ;
+; pivc[31..10] ; Input ; Info     ; Stuck at GND                      ;
+; pivc[8..5]   ; Input ; Info     ; Stuck at GND                      ;
+; pivc[3..2]   ; Input ; Info     ; Stuck at GND                      ;
+; pivc[9]      ; Input ; Info     ; Stuck at VCC                      ;
+; pivc[4]      ; Input ; Info     ; Stuck at VCC                      ;
+; pivc[1]      ; Input ; Info     ; Stuck at VCC                      ;
+; pivc[0]      ; Input ; Info     ; Stuck at GND                      ;
++--------------+-------+----------+-----------------------------------+
+
+
++---------------------------------------------------------------------+
+; Port Connectivity Checks: "VGA:salVGA|hw_image_generator:displayR1" ;
++-------------+-------+----------+------------------------------------+
+; Port        ; Type  ; Severity ; Details                            ;
++-------------+-------+----------+------------------------------------+
+; pivr[7..3]  ; Input ; Info     ; Stuck at VCC                       ;
+; pivr[31..8] ; Input ; Info     ; Stuck at GND                       ;
+; pivr[2]     ; Input ; Info     ; Stuck at GND                       ;
+; pivr[1]     ; Input ; Info     ; Stuck at VCC                       ;
+; pivr[0]     ; Input ; Info     ; Stuck at GND                       ;
+; pivc[8..6]  ; Input ; Info     ; Stuck at VCC                       ;
+; pivc[3..2]  ; Input ; Info     ; Stuck at VCC                       ;
+; pivc[31..9] ; Input ; Info     ; Stuck at GND                       ;
+; pivc[5..4]  ; Input ; Info     ; Stuck at GND                       ;
+; pivc[1..0]  ; Input ; Info     ; Stuck at GND                       ;
++-------------+-------+----------+------------------------------------+
+
+
++---------------------------------------------------------------------------+
+; Port Connectivity Checks: "VGA:salVGA|hw_image_generator:displayUnoExtra" ;
++-------------+-------+----------+------------------------------------------+
+; Port        ; Type  ; Severity ; Details                                  ;
++-------------+-------+----------+------------------------------------------+
+; pivr[7..3]  ; Input ; Info     ; Stuck at VCC                             ;
+; pivr[31..8] ; Input ; Info     ; Stuck at GND                             ;
+; pivr[2]     ; Input ; Info     ; Stuck at GND                             ;
+; pivr[1]     ; Input ; Info     ; Stuck at VCC                             ;
+; pivr[0]     ; Input ; Info     ; Stuck at GND                             ;
+; pivc[31..9] ; Input ; Info     ; Stuck at GND                             ;
+; pivc[5..0]  ; Input ; Info     ; Stuck at GND                             ;
+; pivc[8]     ; Input ; Info     ; Stuck at VCC                             ;
+; pivc[7]     ; Input ; Info     ; Stuck at GND                             ;
+; pivc[6]     ; Input ; Info     ; Stuck at VCC                             ;
++-------------+-------+----------+------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Port Connectivity Checks: "VGA:salVGA|hw_image_generator_OP:displayOp2" ;
++-------------+-------+----------+----------------------------------------+
+; Port        ; Type  ; Severity ; Details                                ;
++-------------+-------+----------+----------------------------------------+
+; pivr[7..3]  ; Input ; Info     ; Stuck at VCC                           ;
+; pivr[31..8] ; Input ; Info     ; Stuck at GND                           ;
+; pivr[2]     ; Input ; Info     ; Stuck at GND                           ;
+; pivr[1]     ; Input ; Info     ; Stuck at VCC                           ;
+; pivr[0]     ; Input ; Info     ; Stuck at GND                           ;
+; pivc[7..3]  ; Input ; Info     ; Stuck at VCC                           ;
+; pivc[31..8] ; Input ; Info     ; Stuck at GND                           ;
+; pivc[2]     ; Input ; Info     ; Stuck at GND                           ;
+; pivc[1]     ; Input ; Info     ; Stuck at VCC                           ;
+; pivc[0]     ; Input ; Info     ; Stuck at GND                           ;
++-------------+-------+----------+----------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Port Connectivity Checks: "VGA:salVGA|hw_image_generator_OP:displayOp1" ;
++-------------+-------+----------+----------------------------------------+
+; Port        ; Type  ; Severity ; Details                                ;
++-------------+-------+----------+----------------------------------------+
+; pivr[7..3]  ; Input ; Info     ; Stuck at VCC                           ;
+; pivr[31..8] ; Input ; Info     ; Stuck at GND                           ;
+; pivr[2]     ; Input ; Info     ; Stuck at GND                           ;
+; pivr[1]     ; Input ; Info     ; Stuck at VCC                           ;
+; pivr[0]     ; Input ; Info     ; Stuck at GND                           ;
+; pivc[6..5]  ; Input ; Info     ; Stuck at VCC                           ;
+; pivc[3..1]  ; Input ; Info     ; Stuck at VCC                           ;
+; pivc[31..7] ; Input ; Info     ; Stuck at GND                           ;
+; pivc[4]     ; Input ; Info     ; Stuck at GND                           ;
+; pivc[0]     ; Input ; Info     ; Stuck at GND                           ;
++-------------+-------+----------+----------------------------------------+
+
+
++--------------------------------------------------------------------+
+; Port Connectivity Checks: "VGA:salVGA|hw_image_generator:displayB" ;
++-------------+-------+----------+-----------------------------------+
+; Port        ; Type  ; Severity ; Details                           ;
++-------------+-------+----------+-----------------------------------+
+; pivr[7..3]  ; Input ; Info     ; Stuck at VCC                      ;
+; pivr[31..8] ; Input ; Info     ; Stuck at GND                      ;
+; pivr[2]     ; Input ; Info     ; Stuck at GND                      ;
+; pivr[1]     ; Input ; Info     ; Stuck at VCC                      ;
+; pivr[0]     ; Input ; Info     ; Stuck at GND                      ;
+; pivc[5..4]  ; Input ; Info     ; Stuck at VCC                      ;
+; pivc[31..8] ; Input ; Info     ; Stuck at GND                      ;
+; pivc[1..0]  ; Input ; Info     ; Stuck at GND                      ;
+; pivc[7]     ; Input ; Info     ; Stuck at VCC                      ;
+; pivc[6]     ; Input ; Info     ; Stuck at GND                      ;
+; pivc[3]     ; Input ; Info     ; Stuck at GND                      ;
+; pivc[2]     ; Input ; Info     ; Stuck at VCC                      ;
++-------------+-------+----------+-----------------------------------+
+
+
++--------------------------------------------------------------------+
+; Port Connectivity Checks: "VGA:salVGA|hw_image_generator:displayA" ;
++-------------+-------+----------+-----------------------------------+
+; Port        ; Type  ; Severity ; Details                           ;
++-------------+-------+----------+-----------------------------------+
+; pivr[7..3]  ; Input ; Info     ; Stuck at VCC                      ;
+; pivr[31..8] ; Input ; Info     ; Stuck at GND                      ;
+; pivr[2]     ; Input ; Info     ; Stuck at GND                      ;
+; pivr[1]     ; Input ; Info     ; Stuck at VCC                      ;
+; pivr[0]     ; Input ; Info     ; Stuck at GND                      ;
+; pivc[31..6] ; Input ; Info     ; Stuck at GND                      ;
+; pivc[2..0]  ; Input ; Info     ; Stuck at GND                      ;
+; pivc[5]     ; Input ; Info     ; Stuck at VCC                      ;
+; pivc[4]     ; Input ; Info     ; Stuck at GND                      ;
+; pivc[3]     ; Input ; Info     ; Stuck at VCC                      ;
++-------------+-------+----------+-----------------------------------+
+
+
++---------------------------------------------------------------------+
+; Port Connectivity Checks: "VGA:salVGA|vga_controller:controllerVGA" ;
++---------+-------+----------+----------------------------------------+
+; Port    ; Type  ; Severity ; Details                                ;
++---------+-------+----------+----------------------------------------+
+; reset_n ; Input ; Info     ; Stuck at VCC                           ;
++---------+-------+----------+----------------------------------------+
+
+
++--------------------------------------------------------------------------+
+; Port Connectivity Checks: "microprocesador:Mircoprocesador|bcd7seg:numB" ;
++--------+-------+----------+----------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                      ;
++--------+-------+----------+----------------------------------------------+
+; bcd[3] ; Input ; Info     ; Stuck at GND                                 ;
++--------+-------+----------+----------------------------------------------+
+
+
++--------------------------------------------------------------------------+
+; Port Connectivity Checks: "microprocesador:Mircoprocesador|bcd7seg:numA" ;
++--------+-------+----------+----------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                      ;
++--------+-------+----------+----------------------------------------------+
+; bcd[3] ; Input ; Info     ; Stuck at GND                                 ;
++--------+-------+----------+----------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "microprocesador:Mircoprocesador|alu:Alu"                                            ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; cout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "microprocesador:Mircoprocesador|fetch:Fetch"                                            ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; cs       ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; cableclk ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 20                          ;
+; cycloneiii_ff         ; 143                         ;
+;     ENA               ; 75                          ;
+;     plain             ; 68                          ;
+; cycloneiii_lcell_comb ; 491                         ;
+;     arith             ; 48                          ;
+;         2 data inputs ; 45                          ;
+;         3 data inputs ; 3                           ;
+;     normal            ; 443                         ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 31                          ;
+;         2 data inputs ; 42                          ;
+;         3 data inputs ; 71                          ;
+;         4 data inputs ; 297                         ;
+;                       ;                             ;
+; Max LUT depth         ; 11.00                       ;
+; Average LUT depth     ; 5.56                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+    Info: Processing started: Sun Jan 03 01:52:13 2021
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off microprocesador -c microprocesador
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file gen25mhz.vhd
+    Info (12022): Found design unit 1: Gen25MHz-behavior File: C:/Users/carlo/Desktop/VLSI/Proyecto05/Gen25MHz.vhd Line: 10
+    Info (12023): Found entity 1: Gen25MHz File: C:/Users/carlo/Desktop/VLSI/Proyecto05/Gen25MHz.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file vga_controller.vhd
+    Info (12022): Found design unit 1: vga_controller-behavior File: C:/Users/carlo/Desktop/VLSI/Proyecto05/vga_controller.vhd Line: 50
+    Info (12023): Found entity 1: vga_controller File: C:/Users/carlo/Desktop/VLSI/Proyecto05/vga_controller.vhd Line: 26
+Info (12021): Found 2 design units, including 1 entities, in source file interpreteroperador.vhd
+    Info (12022): Found design unit 1: interpreterOperador-behavior File: C:/Users/carlo/Desktop/VLSI/Proyecto05/interpreterOperador.vhd Line: 13
+    Info (12023): Found entity 1: interpreterOperador File: C:/Users/carlo/Desktop/VLSI/Proyecto05/interpreterOperador.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file hw_image_generator_op.vhd
+    Info (12022): Found design unit 1: hw_image_generator_OP-behavior File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 42
+    Info (12023): Found entity 1: hw_image_generator_OP File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 25
+Info (12021): Found 2 design units, including 1 entities, in source file hw_image_generator.vhd
+    Info (12022): Found design unit 1: hw_image_generator-behavior File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 42
+    Info (12023): Found entity 1: hw_image_generator File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 25
+Info (12021): Found 2 design units, including 1 entities, in source file vga.vhd
+    Info (12022): Found design unit 1: VGA-behavioral File: C:/Users/carlo/Desktop/VLSI/Proyecto05/VGA.vhd Line: 24
+    Info (12023): Found entity 1: VGA File: C:/Users/carlo/Desktop/VLSI/Proyecto05/VGA.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file mux2x1alu.vhd
+    Info (12022): Found design unit 1: mux2x1ALU-arq File: C:/Users/carlo/Desktop/VLSI/Proyecto05/mux2x1ALU.vhd Line: 11
+    Info (12023): Found entity 1: mux2x1ALU File: C:/Users/carlo/Desktop/VLSI/Proyecto05/mux2x1ALU.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file bcd2x7seg.vhd
+    Info (12022): Found design unit 1: bcd2x7seg-arq File: C:/Users/carlo/Desktop/VLSI/Proyecto05/bcd2x7seg.vhd Line: 11
+    Info (12023): Found entity 1: bcd2x7seg File: C:/Users/carlo/Desktop/VLSI/Proyecto05/bcd2x7seg.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file sum3bit.vhd
+    Info (12022): Found design unit 1: sum3bit-arq File: C:/Users/carlo/Desktop/VLSI/Proyecto05/sum3bit.vhd Line: 14
+    Info (12023): Found entity 1: sum3bit File: C:/Users/carlo/Desktop/VLSI/Proyecto05/sum3bit.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file mux4x1au.vhd
+    Info (12022): Found design unit 1: mux4x1AU-arq File: C:/Users/carlo/Desktop/VLSI/Proyecto05/mux4x1AU.vhd Line: 10
+    Info (12023): Found entity 1: mux4x1AU File: C:/Users/carlo/Desktop/VLSI/Proyecto05/mux4x1AU.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file bcd7seg.vhd
+    Info (12022): Found design unit 1: bcd7seg-arq File: C:/Users/carlo/Desktop/VLSI/Proyecto05/bcd7seg.vhd Line: 11
+    Info (12023): Found entity 1: bcd7seg File: C:/Users/carlo/Desktop/VLSI/Proyecto05/bcd7seg.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file ram.vhd
+    Info (12022): Found design unit 1: ram-behavior File: C:/Users/carlo/Desktop/VLSI/Proyecto05/ram.vhd Line: 15
+    Info (12023): Found entity 1: ram File: C:/Users/carlo/Desktop/VLSI/Proyecto05/ram.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file ul.vhd
+    Info (12022): Found design unit 1: ul-arq File: C:/Users/carlo/Desktop/VLSI/Proyecto05/ul.vhd Line: 11
+    Info (12023): Found entity 1: ul File: C:/Users/carlo/Desktop/VLSI/Proyecto05/ul.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file ua.vhd
+    Info (12022): Found design unit 1: ua-arq File: C:/Users/carlo/Desktop/VLSI/Proyecto05/ua.vhd Line: 13
+    Info (12023): Found entity 1: ua File: C:/Users/carlo/Desktop/VLSI/Proyecto05/ua.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
+    Info (12022): Found design unit 1: alu-arq File: C:/Users/carlo/Desktop/VLSI/Proyecto05/alu.vhd Line: 14
+    Info (12023): Found entity 1: alu File: C:/Users/carlo/Desktop/VLSI/Proyecto05/alu.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file romdatos.vhd
+    Info (12022): Found design unit 1: romDatos-behavior File: C:/Users/carlo/Desktop/VLSI/Proyecto05/romDatos.vhd Line: 11
+    Info (12023): Found entity 1: romDatos File: C:/Users/carlo/Desktop/VLSI/Proyecto05/romDatos.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file relojlento.vhd
+    Info (12022): Found design unit 1: relojlento-behavior File: C:/Users/carlo/Desktop/VLSI/Proyecto05/relojlento.vhd Line: 10
+    Info (12023): Found entity 1: relojlento File: C:/Users/carlo/Desktop/VLSI/Proyecto05/relojlento.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file contador.vhd
+    Info (12022): Found design unit 1: contador-behavior File: C:/Users/carlo/Desktop/VLSI/Proyecto05/contador.vhd Line: 9
+    Info (12023): Found entity 1: contador File: C:/Users/carlo/Desktop/VLSI/Proyecto05/contador.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file fetchrom.vhd
+    Info (12022): Found design unit 1: fetchRom-behavior File: C:/Users/carlo/Desktop/VLSI/Proyecto05/fetchRom.vhd Line: 13
+    Info (12023): Found entity 1: fetchRom File: C:/Users/carlo/Desktop/VLSI/Proyecto05/fetchRom.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file fetch.vhd
+    Info (12022): Found design unit 1: fetch-behavior File: C:/Users/carlo/Desktop/VLSI/Proyecto05/fetch.vhd Line: 12
+    Info (12023): Found entity 1: fetch File: C:/Users/carlo/Desktop/VLSI/Proyecto05/fetch.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file decoder.vhd
+    Info (12022): Found design unit 1: decoder-behavior File: C:/Users/carlo/Desktop/VLSI/Proyecto05/decoder.vhd Line: 15
+    Info (12023): Found entity 1: decoder File: C:/Users/carlo/Desktop/VLSI/Proyecto05/decoder.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file microprocesador.vhd
+    Info (12022): Found design unit 1: microprocesador-behavior File: C:/Users/carlo/Desktop/VLSI/Proyecto05/microprocesador.vhd Line: 15
+    Info (12023): Found entity 1: microprocesador File: C:/Users/carlo/Desktop/VLSI/Proyecto05/microprocesador.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file top.vhd
+    Info (12022): Found design unit 1: top-behavior File: C:/Users/carlo/Desktop/VLSI/Proyecto05/top.vhd Line: 18
+    Info (12023): Found entity 1: top File: C:/Users/carlo/Desktop/VLSI/Proyecto05/top.vhd Line: 5
+Info (12127): Elaborating entity "top" for the top level hierarchy
+Info (12129): Elaborating entity "microprocesador" using architecture "A:behavior" for hierarchy "microprocesador:Mircoprocesador" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/top.vhd Line: 26
+Warning (10036): Verilog HDL or VHDL warning at microprocesador.vhd(22): object "cout" assigned a value but never read File: C:/Users/carlo/Desktop/VLSI/Proyecto05/microprocesador.vhd Line: 22
+Warning (10036): Verilog HDL or VHDL warning at microprocesador.vhd(32): object "slowClk" assigned a value but never read File: C:/Users/carlo/Desktop/VLSI/Proyecto05/microprocesador.vhd Line: 32
+Warning (10541): VHDL Signal Declaration warning at microprocesador.vhd(34): used implicit default value for signal "help" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/carlo/Desktop/VLSI/Proyecto05/microprocesador.vhd Line: 34
+Info (12129): Elaborating entity "fetch" using architecture "A:behavior" for hierarchy "microprocesador:Mircoprocesador|fetch:Fetch" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/microprocesador.vhd Line: 39
+Info (12129): Elaborating entity "relojlento" using architecture "A:behavior" for hierarchy "microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/fetch.vhd Line: 17
+Info (12129): Elaborating entity "contador" using architecture "A:behavior" for hierarchy "microprocesador:Mircoprocesador|fetch:Fetch|contador:u2" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/fetch.vhd Line: 18
+Info (12129): Elaborating entity "fetchRom" using architecture "A:behavior" for hierarchy "microprocesador:Mircoprocesador|fetch:Fetch|fetchRom:u3" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/fetch.vhd Line: 19
+Warning (10541): VHDL Signal Declaration warning at fetchRom.vhd(17): used implicit default value for signal "mem_rom" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/carlo/Desktop/VLSI/Proyecto05/fetchRom.vhd Line: 17
+Warning (10492): VHDL Process Statement warning at fetchRom.vhd(26): signal "mem_rom" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/fetchRom.vhd Line: 26
+Info (12129): Elaborating entity "decoder" using architecture "A:behavior" for hierarchy "microprocesador:Mircoprocesador|decoder:Decoder" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/microprocesador.vhd Line: 40
+Info (12129): Elaborating entity "alu" using architecture "A:arq" for hierarchy "microprocesador:Mircoprocesador|alu:Alu" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/microprocesador.vhd Line: 42
+Warning (10492): VHDL Process Statement warning at alu.vhd(41): signal "s_salALU" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/alu.vhd Line: 41
+Warning (10492): VHDL Process Statement warning at alu.vhd(44): signal "s_salALU" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/alu.vhd Line: 44
+Info (12129): Elaborating entity "ua" using architecture "A:arq" for hierarchy "microprocesador:Mircoprocesador|alu:Alu|ua:ua1" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/alu.vhd Line: 22
+Info (12129): Elaborating entity "mux4x1AU" using architecture "A:arq" for hierarchy "microprocesador:Mircoprocesador|alu:Alu|ua:ua1|mux4x1AU:u1" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/ua.vhd Line: 16
+Info (12129): Elaborating entity "sum3bit" using architecture "A:arq" for hierarchy "microprocesador:Mircoprocesador|alu:Alu|ua:ua1|sum3bit:u2" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/ua.vhd Line: 17
+Info (12129): Elaborating entity "ul" using architecture "A:arq" for hierarchy "microprocesador:Mircoprocesador|alu:Alu|ul:ul1" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/alu.vhd Line: 25
+Info (12129): Elaborating entity "mux2x1ALU" using architecture "A:arq" for hierarchy "microprocesador:Mircoprocesador|alu:Alu|mux2x1ALU:muxalu" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/alu.vhd Line: 28
+Info (12129): Elaborating entity "bcd2x7seg" using architecture "A:arq" for hierarchy "microprocesador:Mircoprocesador|alu:Alu|bcd2x7seg:alu7seg" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/alu.vhd Line: 31
+Info (12129): Elaborating entity "ram" using architecture "A:behavior" for hierarchy "microprocesador:Mircoprocesador|ram:memoriaA" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/microprocesador.vhd Line: 45
+Warning (10492): VHDL Process Statement warning at ram.vhd(30): signal "wrEn" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/ram.vhd Line: 30
+Info (12129): Elaborating entity "bcd7seg" using architecture "A:arq" for hierarchy "microprocesador:Mircoprocesador|bcd7seg:numA" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/microprocesador.vhd Line: 48
+Info (12129): Elaborating entity "VGA" using architecture "A:behavioral" for hierarchy "VGA:salVGA" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/top.vhd Line: 27
+Info (12129): Elaborating entity "Gen25MHz" using architecture "A:behavior" for hierarchy "VGA:salVGA|Gen25MHz:VGAclk" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/VGA.vhd Line: 47
+Info (12129): Elaborating entity "vga_controller" using architecture "A:behavior" for hierarchy "VGA:salVGA|vga_controller:controllerVGA" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/VGA.vhd Line: 49
+Info (12129): Elaborating entity "interpreterOperador" using architecture "A:behavior" for hierarchy "VGA:salVGA|interpreterOperador:operador" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/VGA.vhd Line: 53
+Info (12129): Elaborating entity "hw_image_generator" using architecture "A:behavior" for hierarchy "VGA:salVGA|hw_image_generator:displayA" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/VGA.vhd Line: 57
+Warning (10540): VHDL Signal Declaration warning at hw_image_generator.vhd(44): used explicit default value for signal "aSeg" because signal was never assigned a value File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 44
+Warning (10540): VHDL Signal Declaration warning at hw_image_generator.vhd(45): used explicit default value for signal "lSeg" because signal was never assigned a value File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 45
+Warning (10540): VHDL Signal Declaration warning at hw_image_generator.vhd(47): used explicit default value for signal "opcty" because signal was never assigned a value File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 47
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(59): signal "pivR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 59
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(59): signal "aSeg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 59
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(59): signal "pivC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 59
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(59): signal "lSeg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 59
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(59): signal "d7s" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 59
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(63): signal "pivR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 63
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(63): signal "aSeg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 63
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(63): signal "pivC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 63
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(63): signal "lSeg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 63
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(63): signal "d7s" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 63
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(64): signal "opcty" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 64
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(67): signal "pivR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 67
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(67): signal "lSeg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 67
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(67): signal "pivC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 67
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(67): signal "aSeg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 67
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(67): signal "d7s" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 67
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(71): signal "pivR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 71
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(71): signal "lSeg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 71
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(71): signal "pivC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 71
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(71): signal "aSeg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 71
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(71): signal "d7s" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 71
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(72): signal "opcty" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 72
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(75): signal "pivR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 75
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(75): signal "lSeg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 75
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(75): signal "pivC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 75
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(75): signal "aSeg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 75
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(75): signal "d7s" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 75
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(79): signal "pivR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 79
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(79): signal "lSeg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 79
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(79): signal "pivC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 79
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(79): signal "aSeg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 79
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(79): signal "d7s" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 79
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(80): signal "opcty" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 80
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(83): signal "pivR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 83
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(83): signal "aSeg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 83
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(83): signal "pivC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 83
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(83): signal "lSeg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 83
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(83): signal "d7s" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 83
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(87): signal "pivR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 87
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(87): signal "aSeg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 87
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(87): signal "pivC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 87
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(87): signal "lSeg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 87
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(87): signal "d7s" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 87
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(88): signal "opcty" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 88
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(91): signal "pivR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 91
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(91): signal "lSeg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 91
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(91): signal "pivC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 91
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(91): signal "aSeg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 91
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(91): signal "d7s" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 91
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(95): signal "pivR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 95
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(95): signal "lSeg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 95
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(95): signal "pivC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 95
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(95): signal "aSeg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 95
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(95): signal "d7s" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 95
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(96): signal "opcty" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 96
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(99): signal "pivR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 99
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(99): signal "lSeg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 99
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(99): signal "pivC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 99
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(99): signal "aSeg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 99
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(99): signal "d7s" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 99
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(103): signal "pivR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 103
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(103): signal "lSeg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 103
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(103): signal "pivC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 103
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(103): signal "aSeg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 103
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(103): signal "d7s" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 103
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(104): signal "opcty" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 104
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(107): signal "pivR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 107
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(107): signal "aSeg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 107
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(107): signal "pivC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 107
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(107): signal "lSeg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 107
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(107): signal "d7s" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 107
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(111): signal "pivR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 111
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(111): signal "aSeg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 111
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(111): signal "pivC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 111
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(111): signal "lSeg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 111
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(111): signal "d7s" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 111
+Warning (10492): VHDL Process Statement warning at hw_image_generator.vhd(112): signal "opcty" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 112
+Warning (10631): VHDL Process Statement warning at hw_image_generator.vhd(50): inferring latch(es) for signal or variable "red", which holds its previous value in one or more paths through the process File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 50
+Warning (10631): VHDL Process Statement warning at hw_image_generator.vhd(50): inferring latch(es) for signal or variable "green", which holds its previous value in one or more paths through the process File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 50
+Warning (10631): VHDL Process Statement warning at hw_image_generator.vhd(50): inferring latch(es) for signal or variable "blue", which holds its previous value in one or more paths through the process File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 50
+Info (10041): Inferred latch for "blue[0]" at hw_image_generator.vhd(50) File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 50
+Info (10041): Inferred latch for "blue[1]" at hw_image_generator.vhd(50) File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 50
+Info (10041): Inferred latch for "blue[2]" at hw_image_generator.vhd(50) File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 50
+Info (10041): Inferred latch for "blue[3]" at hw_image_generator.vhd(50) File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 50
+Info (10041): Inferred latch for "green[0]" at hw_image_generator.vhd(50) File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 50
+Info (10041): Inferred latch for "green[1]" at hw_image_generator.vhd(50) File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 50
+Info (10041): Inferred latch for "green[2]" at hw_image_generator.vhd(50) File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 50
+Info (10041): Inferred latch for "green[3]" at hw_image_generator.vhd(50) File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 50
+Info (10041): Inferred latch for "red[0]" at hw_image_generator.vhd(50) File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 50
+Info (10041): Inferred latch for "red[1]" at hw_image_generator.vhd(50) File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 50
+Info (10041): Inferred latch for "red[2]" at hw_image_generator.vhd(50) File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 50
+Info (10041): Inferred latch for "red[3]" at hw_image_generator.vhd(50) File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 50
+Info (12129): Elaborating entity "hw_image_generator_OP" using architecture "A:behavior" for hierarchy "VGA:salVGA|hw_image_generator_OP:displayOp1" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/VGA.vhd Line: 63
+Warning (10540): VHDL Signal Declaration warning at hw_image_generator_OP.vhd(44): used explicit default value for signal "opcty" because signal was never assigned a value File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 44
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(56): signal "opDis" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 56
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(56): signal "pivR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 56
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(56): signal "pivC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 56
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(62): signal "opDis" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 62
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(62): signal "pivR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 62
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(62): signal "pivC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 62
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(68): signal "opDis" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 68
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(68): signal "pivR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 68
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(68): signal "pivC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 68
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(69): signal "pivR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 69
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(69): signal "pivC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 69
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(75): signal "opDis" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 75
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(75): signal "pivR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 75
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(75): signal "pivC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 75
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(76): signal "pivR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 76
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(76): signal "pivC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 76
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(81): signal "opDis" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 81
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(81): signal "pivR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 81
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(81): signal "pivC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 81
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(82): signal "pivR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 82
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(82): signal "pivC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 82
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(87): signal "opDis" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 87
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(87): signal "pivR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 87
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(87): signal "pivC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 87
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(93): signal "opDis" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 93
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(93): signal "pivR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 93
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(93): signal "pivC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 93
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(94): signal "opcty" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 94
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(98): signal "opDis" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 98
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(98): signal "pivR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 98
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(98): signal "pivC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 98
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(99): signal "opcty" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 99
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(103): signal "opDis" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 103
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(103): signal "pivR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 103
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(103): signal "pivC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 103
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(104): signal "pivR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 104
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(104): signal "pivC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 104
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(105): signal "opcty" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 105
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(109): signal "opDis" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 109
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(109): signal "pivR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 109
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(109): signal "pivC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 109
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(110): signal "pivR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 110
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(110): signal "pivC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 110
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(111): signal "opcty" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 111
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(115): signal "opDis" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 115
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(115): signal "pivR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 115
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(115): signal "pivC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 115
+Warning (10492): VHDL Process Statement warning at hw_image_generator_OP.vhd(116): signal "opcty" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 116
+Warning (10631): VHDL Process Statement warning at hw_image_generator_OP.vhd(47): inferring latch(es) for signal or variable "red", which holds its previous value in one or more paths through the process File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 47
+Warning (10631): VHDL Process Statement warning at hw_image_generator_OP.vhd(47): inferring latch(es) for signal or variable "green", which holds its previous value in one or more paths through the process File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 47
+Warning (10631): VHDL Process Statement warning at hw_image_generator_OP.vhd(47): inferring latch(es) for signal or variable "blue", which holds its previous value in one or more paths through the process File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 47
+Info (10041): Inferred latch for "blue[0]" at hw_image_generator_OP.vhd(47) File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 47
+Info (10041): Inferred latch for "blue[1]" at hw_image_generator_OP.vhd(47) File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 47
+Info (10041): Inferred latch for "blue[2]" at hw_image_generator_OP.vhd(47) File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 47
+Info (10041): Inferred latch for "blue[3]" at hw_image_generator_OP.vhd(47) File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 47
+Info (10041): Inferred latch for "green[0]" at hw_image_generator_OP.vhd(47) File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 47
+Info (10041): Inferred latch for "green[1]" at hw_image_generator_OP.vhd(47) File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 47
+Info (10041): Inferred latch for "green[2]" at hw_image_generator_OP.vhd(47) File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 47
+Info (10041): Inferred latch for "green[3]" at hw_image_generator_OP.vhd(47) File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 47
+Info (10041): Inferred latch for "red[0]" at hw_image_generator_OP.vhd(47) File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 47
+Info (10041): Inferred latch for "red[1]" at hw_image_generator_OP.vhd(47) File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 47
+Info (10041): Inferred latch for "red[2]" at hw_image_generator_OP.vhd(47) File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 47
+Info (10041): Inferred latch for "red[3]" at hw_image_generator_OP.vhd(47) File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 47
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13049): Converted tri-state buffer "microprocesador:Mircoprocesador|fetch:Fetch|fetchRom:u3|bus_datos[0]" feeding internal logic into a wire File: C:/Users/carlo/Desktop/VLSI/Proyecto05/fetchRom.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "microprocesador:Mircoprocesador|fetch:Fetch|fetchRom:u3|bus_datos[1]" feeding internal logic into a wire File: C:/Users/carlo/Desktop/VLSI/Proyecto05/fetchRom.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "microprocesador:Mircoprocesador|fetch:Fetch|fetchRom:u3|bus_datos[2]" feeding internal logic into a wire File: C:/Users/carlo/Desktop/VLSI/Proyecto05/fetchRom.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "microprocesador:Mircoprocesador|fetch:Fetch|fetchRom:u3|bus_datos[4]" feeding internal logic into a wire File: C:/Users/carlo/Desktop/VLSI/Proyecto05/fetchRom.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "microprocesador:Mircoprocesador|fetch:Fetch|fetchRom:u3|bus_datos[5]" feeding internal logic into a wire File: C:/Users/carlo/Desktop/VLSI/Proyecto05/fetchRom.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "microprocesador:Mircoprocesador|fetch:Fetch|fetchRom:u3|bus_datos[6]" feeding internal logic into a wire File: C:/Users/carlo/Desktop/VLSI/Proyecto05/fetchRom.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "microprocesador:Mircoprocesador|fetch:Fetch|fetchRom:u3|bus_datos[7]" feeding internal logic into a wire File: C:/Users/carlo/Desktop/VLSI/Proyecto05/fetchRom.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "microprocesador:Mircoprocesador|fetch:Fetch|fetchRom:u3|bus_datos[8]" feeding internal logic into a wire File: C:/Users/carlo/Desktop/VLSI/Proyecto05/fetchRom.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "microprocesador:Mircoprocesador|fetch:Fetch|fetchRom:u3|bus_datos[9]" feeding internal logic into a wire File: C:/Users/carlo/Desktop/VLSI/Proyecto05/fetchRom.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "microprocesador:Mircoprocesador|fetch:Fetch|fetchRom:u3|bus_datos[10]" feeding internal logic into a wire File: C:/Users/carlo/Desktop/VLSI/Proyecto05/fetchRom.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "microprocesador:Mircoprocesador|fetch:Fetch|fetchRom:u3|bus_datos[11]" feeding internal logic into a wire File: C:/Users/carlo/Desktop/VLSI/Proyecto05/fetchRom.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "microprocesador:Mircoprocesador|fetch:Fetch|fetchRom:u3|bus_datos[12]" feeding internal logic into a wire File: C:/Users/carlo/Desktop/VLSI/Proyecto05/fetchRom.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "microprocesador:Mircoprocesador|fetch:Fetch|fetchRom:u3|bus_datos[13]" feeding internal logic into a wire File: C:/Users/carlo/Desktop/VLSI/Proyecto05/fetchRom.vhd Line: 9
+Info (276014): Found 3 instances of uninferred RAM logic
+    Info (276013): RAM logic "microprocesador:Mircoprocesador|fetch:Fetch|fetchRom:u3|mem_rom" is uninferred because MIF is not supported for the selected family File: C:/Users/carlo/Desktop/VLSI/Proyecto05/fetchRom.vhd Line: 17
+    Info (276013): RAM logic "microprocesador:Mircoprocesador|ram:memoriaA|memory" is uninferred because MIF is not supported for the selected family File: C:/Users/carlo/Desktop/VLSI/Proyecto05/ram.vhd Line: 17
+    Info (276013): RAM logic "microprocesador:Mircoprocesador|ram:memoriaB|memory" is uninferred because MIF is not supported for the selected family File: C:/Users/carlo/Desktop/VLSI/Proyecto05/ram.vhd Line: 17
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "VGA:salVGA|hw_image_generator:displayA|red[3]" merged with LATCH primitive "VGA:salVGA|hw_image_generator:displayA|red[1]" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 50
+    Info (13026): Duplicate LATCH primitive "VGA:salVGA|hw_image_generator:displayA|red[2]" merged with LATCH primitive "VGA:salVGA|hw_image_generator:displayA|red[1]" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 50
+    Info (13026): Duplicate LATCH primitive "VGA:salVGA|hw_image_generator:displayB|red[3]" merged with LATCH primitive "VGA:salVGA|hw_image_generator:displayB|red[1]" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 50
+    Info (13026): Duplicate LATCH primitive "VGA:salVGA|hw_image_generator:displayB|red[2]" merged with LATCH primitive "VGA:salVGA|hw_image_generator:displayB|red[1]" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 50
+    Info (13026): Duplicate LATCH primitive "VGA:salVGA|hw_image_generator_OP:displayOp1|red[3]" merged with LATCH primitive "VGA:salVGA|hw_image_generator_OP:displayOp1|red[1]" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 47
+    Info (13026): Duplicate LATCH primitive "VGA:salVGA|hw_image_generator_OP:displayOp1|red[2]" merged with LATCH primitive "VGA:salVGA|hw_image_generator_OP:displayOp1|red[1]" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 47
+    Info (13026): Duplicate LATCH primitive "VGA:salVGA|hw_image_generator:displayR1|red[3]" merged with LATCH primitive "VGA:salVGA|hw_image_generator:displayR1|red[1]" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 50
+    Info (13026): Duplicate LATCH primitive "VGA:salVGA|hw_image_generator:displayR1|red[2]" merged with LATCH primitive "VGA:salVGA|hw_image_generator:displayR1|red[1]" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 50
+    Info (13026): Duplicate LATCH primitive "VGA:salVGA|hw_image_generator:displayR0|red[3]" merged with LATCH primitive "VGA:salVGA|hw_image_generator:displayR0|red[1]" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 50
+    Info (13026): Duplicate LATCH primitive "VGA:salVGA|hw_image_generator:displayR0|red[2]" merged with LATCH primitive "VGA:salVGA|hw_image_generator:displayR0|red[1]" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 50
+    Info (13026): Duplicate LATCH primitive "VGA:salVGA|hw_image_generator_OP:displayIgual|red[3]" merged with LATCH primitive "VGA:salVGA|hw_image_generator_OP:displayIgual|red[1]" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 47
+    Info (13026): Duplicate LATCH primitive "VGA:salVGA|hw_image_generator_OP:displayIgual|red[2]" merged with LATCH primitive "VGA:salVGA|hw_image_generator_OP:displayIgual|red[1]" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 47
+    Info (13026): Duplicate LATCH primitive "VGA:salVGA|hw_image_generator:displayInstruccion0|red[3]" merged with LATCH primitive "VGA:salVGA|hw_image_generator:displayInstruccion0|red[1]" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 50
+    Info (13026): Duplicate LATCH primitive "VGA:salVGA|hw_image_generator:displayInstruccion0|red[2]" merged with LATCH primitive "VGA:salVGA|hw_image_generator:displayInstruccion0|red[1]" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 50
+    Info (13026): Duplicate LATCH primitive "VGA:salVGA|hw_image_generator:displayInstruccion1|red[3]" merged with LATCH primitive "VGA:salVGA|hw_image_generator:displayInstruccion1|red[1]" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 50
+    Info (13026): Duplicate LATCH primitive "VGA:salVGA|hw_image_generator:displayInstruccion1|red[2]" merged with LATCH primitive "VGA:salVGA|hw_image_generator:displayInstruccion1|red[1]" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 50
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "G[0]" is stuck at GND File: C:/Users/carlo/Desktop/VLSI/Proyecto05/top.vhd Line: 9
+    Warning (13410): Pin "G[1]" is stuck at GND File: C:/Users/carlo/Desktop/VLSI/Proyecto05/top.vhd Line: 9
+    Warning (13410): Pin "G[2]" is stuck at GND File: C:/Users/carlo/Desktop/VLSI/Proyecto05/top.vhd Line: 9
+    Warning (13410): Pin "G[3]" is stuck at GND File: C:/Users/carlo/Desktop/VLSI/Proyecto05/top.vhd Line: 9
+    Warning (13410): Pin "B[0]" is stuck at GND File: C:/Users/carlo/Desktop/VLSI/Proyecto05/top.vhd Line: 10
+    Warning (13410): Pin "B[1]" is stuck at GND File: C:/Users/carlo/Desktop/VLSI/Proyecto05/top.vhd Line: 10
+    Warning (13410): Pin "B[2]" is stuck at GND File: C:/Users/carlo/Desktop/VLSI/Proyecto05/top.vhd Line: 10
+    Warning (13410): Pin "B[3]" is stuck at GND File: C:/Users/carlo/Desktop/VLSI/Proyecto05/top.vhd Line: 10
+    Warning (13410): Pin "salbits[0]" is stuck at GND File: C:/Users/carlo/Desktop/VLSI/Proyecto05/top.vhd Line: 14
+    Warning (13410): Pin "salbits[1]" is stuck at GND File: C:/Users/carlo/Desktop/VLSI/Proyecto05/top.vhd Line: 14
+    Warning (13410): Pin "salbits[2]" is stuck at GND File: C:/Users/carlo/Desktop/VLSI/Proyecto05/top.vhd Line: 14
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "cs" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/top.vhd Line: 7
+Info (21057): Implemented 578 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 17 output pins
+    Info (21061): Implemented 558 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 172 warnings
+    Info: Peak virtual memory: 4816 megabytes
+    Info: Processing ended: Sun Jan 03 01:52:25 2021
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:24
+
+
