@@ -31,24 +31,37 @@ signal dataIn	: std_logic_vector(2 downto 0); --registro de entrada
 
 signal slowClk		: std_logic;
 
-signal help:  std_logic_vector(2 downto 0);
+signal selType: std_logic_vector(1 downto 0);
+signal inmediato: std_logic;
+signal datoRam: std_logic_vector(2 downto 0);
+
+signal datB:  std_logic_vector(2 downto 0);
+signal datoGuardar: std_logic_vector(2 downto 0);
+
+signal ope: std_logic_vector(3 downto 0);
+signal weReg, weRam: std_logic;
 
 BEGIN
 
-sbits<=help;
-Fetch: entity work.fetch(behavior) port map (clk,reset,'1',bus_instruc,numIns,slowClk);
-Decoder: entity work.decoder(behavior) port map (bus_instruc,bus_dirA,bus_dirB,s,s2,cin,AddrWr,cs);
 
-Alu: entity work.alu(arq) port map(bus_datosA,bus_datosB,cin,s2 & s,cout,numC,Csal7seg_1,Csal7seg_0);
-op<=cin&s2&s; 
+Fetch: entity work.fetch(behavior) port map (clk,reset,'1',bus_instruc,numIns,slowClk);
+Decoder: entity work.decoder(behavior) port map (bus_instruc,bus_dirA,bus_dirB,s,s2,cin,AddrWr,selType,inmediato);
+
+control: entity work.control(behavior) port map(bus_datosB,bus_dirB,selType,inmediato,s2&cin&s,ope,datB,weReg,weRam,numC,datoRam,datoGuardar);
+
+Alu: entity work.alu(arq) port map(bus_datosA,datB,ope(2),ope(3) & ope(1 downto 0),cout,numC,Csal7seg_1,Csal7seg_0);
+op<=ope; 
 
 --memoriaA: entity work.ram(behavior) port map(AddrWr, bus_dirA,not clk,clk,reset nor not clk,numC,bus_datosA);
 --memoriaB: entity work.ram(behavior) port map(AddrWr, bus_dirB,not clk,clk,reset nor not clk,numC,bus_datosB);
 
-registers: entity work.REGs(behavior) port map(AddrWr, bus_dirA,bus_dirB,not clk,clk,reset nor not clk,numC,bus_datosA,bus_datosB);
+registers: entity work.REGs(behavior) port map(AddrWr, bus_dirA,bus_dirB,not clk,clk,(reset or weReg) nor not clk,datoGuardar,bus_datosA,bus_datosB);
+
+memoria: entity work.ram(behavior) port map(AddrWr,numC,not clk,clk,(reset or weRam) nor not clk,numC,datoRam);
+
 
 numA: entity work.bcd7seg(arq) port map('0'&bus_datosA,Asal7seg);
-numB: entity work.bcd7seg(arq) port map('0'&bus_datosB,Bsal7seg);
+numB: entity work.bcd7seg(arq) port map('0'&datB,Bsal7seg);
 numIntruccion: entity work.bcd2x7seg(arq) port map(numIns,numI_1,numI_0);
 
 
