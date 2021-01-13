@@ -9,7 +9,8 @@ port(
 	s: out std_logic_vector(1 downto 0);
 	s2,cin: out std_logic;
 	datosDIRC: out std_logic_vector (2 downto 0);
-	cs: in std_logic); --que operacion es Sum Rest, And, OR Xor
+	selType: out std_logic_vector(1 downto 0);
+	inmediato: out std_logic);
 end decoder;
 
 architecture behavior of decoder is
@@ -23,7 +24,8 @@ datosDIRA<= de_intruc(9 downto 7);--DIRECCCIONES DE A
 s<= de_intruc(11 downto 10);
 cin<= de_intruc(12);
 s2<= de_intruc(13);
---de_intruc(15 downto 14) no se utilizan
+selType<=de_intruc(15 downto 14);
+inmediato<=de_intruc(3);
 
 
 end architecture behavior;

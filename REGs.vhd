@@ -15,8 +15,6 @@ end entity;
 architecture behavior of REGs is
 	type matrix is array (0 to 7) of std_logic_vector(2 downto 0);
 	signal memory			: matrix;
-	attribute ram_init_file: string;
-	attribute ram_init_file of memory : signal is "data.mif";
 
 	signal dataInBuf		: std_logic_vector(2 downto 0);
 	signal AddressWrite	: std_logic_vector(2 downto 0);

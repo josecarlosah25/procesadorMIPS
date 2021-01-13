@@ -1,5 +1,5 @@
 Analysis & Synthesis report for microprocesador
-Sun Jan 03 03:20:33 2021
+Tue Jan 12 03:27:02 2021
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -73,15 +73,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Jan 03 03:20:33 2021       ;
+; Analysis & Synthesis Status        ; Successful - Tue Jan 12 03:27:02 2021       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; microprocesador                             ;
 ; Top-level Entity Name              ; top                                         ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 509                                         ;
-;     Total combinational functions  ; 478                                         ;
-;     Dedicated logic registers      ; 119                                         ;
-; Total registers                    ; 119                                         ;
+; Total logic elements               ; 582                                         ;
+;     Total combinational functions  ; 521                                         ;
+;     Dedicated logic registers      ; 155                                         ;
+; Total registers                    ; 155                                         ;
 ; Total pins                         ; 20                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -191,8 +191,7 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processors 3-4         ;   0.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -212,6 +211,7 @@ https://fpgasoftware.intel.com/eula.
 ; sum3bit.vhd                      ; yes             ; User VHDL File  ; C:/Users/carlo/Desktop/VLSI/Proyecto05/sum3bit.vhd               ;         ;
 ; mux4x1AU.vhd                     ; yes             ; User VHDL File  ; C:/Users/carlo/Desktop/VLSI/Proyecto05/mux4x1AU.vhd              ;         ;
 ; bcd7seg.vhd                      ; yes             ; User VHDL File  ; C:/Users/carlo/Desktop/VLSI/Proyecto05/bcd7seg.vhd               ;         ;
+; ram.vhd                          ; yes             ; User VHDL File  ; C:/Users/carlo/Desktop/VLSI/Proyecto05/ram.vhd                   ;         ;
 ; ul.vhd                           ; yes             ; User VHDL File  ; C:/Users/carlo/Desktop/VLSI/Proyecto05/ul.vhd                    ;         ;
 ; ua.vhd                           ; yes             ; User VHDL File  ; C:/Users/carlo/Desktop/VLSI/Proyecto05/ua.vhd                    ;         ;
 ; alu.vhd                          ; yes             ; User VHDL File  ; C:/Users/carlo/Desktop/VLSI/Proyecto05/alu.vhd                   ;         ;
@@ -223,6 +223,7 @@ https://fpgasoftware.intel.com/eula.
 ; microprocesador.vhd              ; yes             ; User VHDL File  ; C:/Users/carlo/Desktop/VLSI/Proyecto05/microprocesador.vhd       ;         ;
 ; top.vhd                          ; yes             ; User VHDL File  ; C:/Users/carlo/Desktop/VLSI/Proyecto05/top.vhd                   ;         ;
 ; REGs.vhd                         ; yes             ; User VHDL File  ; C:/Users/carlo/Desktop/VLSI/Proyecto05/REGs.vhd                  ;         ;
+; control.vhd                      ; yes             ; User VHDL File  ; C:/Users/carlo/Desktop/VLSI/Proyecto05/control.vhd               ;         ;
 +----------------------------------+-----------------+-----------------+------------------------------------------------------------------+---------+
 
 
@@ -231,20 +232,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 509       ;
+; Estimated Total logic elements              ; 582       ;
 ;                                             ;           ;
-; Total combinational functions               ; 478       ;
+; Total combinational functions               ; 521       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 297       ;
-;     -- 3 input functions                    ; 74        ;
-;     -- <=2 input functions                  ; 107       ;
+;     -- 4 input functions                    ; 311       ;
+;     -- 3 input functions                    ; 98        ;
+;     -- <=2 input functions                  ; 112       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 430       ;
+;     -- normal mode                          ; 473       ;
 ;     -- arithmetic mode                      ; 48        ;
 ;                                             ;           ;
-; Total registers                             ; 119       ;
-;     -- Dedicated logic registers            ; 119       ;
+; Total registers                             ; 155       ;
+;     -- Dedicated logic registers            ; 155       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 20        ;
@@ -252,8 +253,8 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 72        ;
-; Total fan-out                               ; 1916      ;
+; Maximum fan-out                             ; 112       ;
+; Total fan-out                               ; 2157      ;
 ; Average fan-out                             ; 3.01      ;
 +---------------------------------------------+-----------+
 
@@ -263,34 +264,35 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------+-----------------------+--------------+
 ; Compilation Hierarchy Node                     ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                             ; Entity Name           ; Library Name ;
 +------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------+-----------------------+--------------+
-; |top                                           ; 478 (0)             ; 119 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 20   ; 0            ; 0          ; |top                                                            ; top                   ; work         ;
-;    |VGA:salVGA|                                ; 332 (6)             ; 45 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|VGA:salVGA                                                 ; VGA                   ; work         ;
+; |top                                           ; 521 (0)             ; 155 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 20   ; 0            ; 0          ; |top                                                            ; top                   ; work         ;
+;    |VGA:salVGA|                                ; 341 (6)             ; 45 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|VGA:salVGA                                                 ; VGA                   ; work         ;
 ;       |Gen25MHz:VGAclk|                        ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|VGA:salVGA|Gen25MHz:VGAclk                                 ; Gen25MHz              ; work         ;
-;       |hw_image_generator:displayA|            ; 52 (52)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|VGA:salVGA|hw_image_generator:displayA                     ; hw_image_generator    ; work         ;
-;       |hw_image_generator:displayB|            ; 31 (31)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|VGA:salVGA|hw_image_generator:displayB                     ; hw_image_generator    ; work         ;
-;       |hw_image_generator:displayInstruccion0| ; 29 (29)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|VGA:salVGA|hw_image_generator:displayInstruccion0          ; hw_image_generator    ; work         ;
-;       |hw_image_generator:displayInstruccion1| ; 13 (13)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|VGA:salVGA|hw_image_generator:displayInstruccion1          ; hw_image_generator    ; work         ;
-;       |hw_image_generator:displayR0|           ; 28 (28)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|VGA:salVGA|hw_image_generator:displayR0                    ; hw_image_generator    ; work         ;
+;       |hw_image_generator:displayA|            ; 49 (49)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|VGA:salVGA|hw_image_generator:displayA                     ; hw_image_generator    ; work         ;
+;       |hw_image_generator:displayB|            ; 43 (43)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|VGA:salVGA|hw_image_generator:displayB                     ; hw_image_generator    ; work         ;
+;       |hw_image_generator:displayInstruccion0| ; 33 (33)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|VGA:salVGA|hw_image_generator:displayInstruccion0          ; hw_image_generator    ; work         ;
+;       |hw_image_generator:displayInstruccion1| ; 14 (14)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|VGA:salVGA|hw_image_generator:displayInstruccion1          ; hw_image_generator    ; work         ;
+;       |hw_image_generator:displayR0|           ; 31 (31)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|VGA:salVGA|hw_image_generator:displayR0                    ; hw_image_generator    ; work         ;
 ;       |hw_image_generator:displayR1|           ; 13 (13)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|VGA:salVGA|hw_image_generator:displayR1                    ; hw_image_generator    ; work         ;
-;       |hw_image_generator:displayUnoExtra|     ; 13 (13)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|VGA:salVGA|hw_image_generator:displayUnoExtra              ; hw_image_generator    ; work         ;
-;       |hw_image_generator_OP:displayIgual|     ; 13 (13)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|VGA:salVGA|hw_image_generator_OP:displayIgual              ; hw_image_generator_OP ; work         ;
-;       |hw_image_generator_OP:displayOp1|       ; 54 (54)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|VGA:salVGA|hw_image_generator_OP:displayOp1                ; hw_image_generator_OP ; work         ;
+;       |hw_image_generator:displayUnoExtra|     ; 12 (12)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|VGA:salVGA|hw_image_generator:displayUnoExtra              ; hw_image_generator    ; work         ;
+;       |hw_image_generator_OP:displayIgual|     ; 14 (14)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|VGA:salVGA|hw_image_generator_OP:displayIgual              ; hw_image_generator_OP ; work         ;
+;       |hw_image_generator_OP:displayOp1|       ; 45 (45)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|VGA:salVGA|hw_image_generator_OP:displayOp1                ; hw_image_generator_OP ; work         ;
 ;       |hw_image_generator_OP:displayOp2|       ; 17 (17)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|VGA:salVGA|hw_image_generator_OP:displayOp2                ; hw_image_generator_OP ; work         ;
-;       |interpreterOperador:operador|           ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|VGA:salVGA|interpreterOperador:operador                    ; interpreterOperador   ; work         ;
+;       |interpreterOperador:operador|           ; 4 (4)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|VGA:salVGA|interpreterOperador:operador                    ; interpreterOperador   ; work         ;
 ;       |vga_controller:controllerVGA|           ; 59 (59)             ; 44 (44)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|VGA:salVGA|vga_controller:controllerVGA                    ; vga_controller        ; work         ;
-;    |microprocesador:Mircoprocesador|           ; 146 (1)             ; 74 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|microprocesador:Mircoprocesador                            ; microprocesador       ; work         ;
-;       |REGs:registers|                         ; 51 (51)             ; 42 (42)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|microprocesador:Mircoprocesador|REGs:registers             ; REGs                  ; work         ;
-;       |alu:Alu|                                ; 23 (2)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|microprocesador:Mircoprocesador|alu:Alu                    ; alu                   ; work         ;
-;          |bcd2x7seg:alu7seg|                   ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|microprocesador:Mircoprocesador|alu:Alu|bcd2x7seg:alu7seg  ; bcd2x7seg             ; work         ;
-;          |mux2x1ALU:muxalu|                    ; 6 (6)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|microprocesador:Mircoprocesador|alu:Alu|mux2x1ALU:muxalu   ; mux2x1ALU             ; work         ;
+;    |microprocesador:Mircoprocesador|           ; 180 (3)             ; 110 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|microprocesador:Mircoprocesador                            ; microprocesador       ; work         ;
+;       |REGs:registers|                         ; 43 (43)             ; 42 (42)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|microprocesador:Mircoprocesador|REGs:registers             ; REGs                  ; work         ;
+;       |alu:Alu|                                ; 14 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|microprocesador:Mircoprocesador|alu:Alu                    ; alu                   ; work         ;
+;          |bcd2x7seg:alu7seg|                   ; 6 (6)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|microprocesador:Mircoprocesador|alu:Alu|bcd2x7seg:alu7seg  ; bcd2x7seg             ; work         ;
 ;          |ua:ua1|                              ; 8 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|microprocesador:Mircoprocesador|alu:Alu|ua:ua1             ; ua                    ; work         ;
 ;             |mux4x1AU:u1|                      ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|microprocesador:Mircoprocesador|alu:Alu|ua:ua1|mux4x1AU:u1 ; mux4x1AU              ; work         ;
 ;             |sum3bit:u2|                       ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|microprocesador:Mircoprocesador|alu:Alu|ua:ua1|sum3bit:u2  ; sum3bit               ; work         ;
-;       |bcd2x7seg:numIntruccion|                ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|microprocesador:Mircoprocesador|bcd2x7seg:numIntruccion    ; bcd2x7seg             ; work         ;
-;       |fetch:Fetch|                            ; 64 (0)              ; 32 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|microprocesador:Mircoprocesador|fetch:Fetch                ; fetch                 ; work         ;
+;       |bcd2x7seg:numIntruccion|                ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|microprocesador:Mircoprocesador|bcd2x7seg:numIntruccion    ; bcd2x7seg             ; work         ;
+;       |control:control|                        ; 10 (10)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|microprocesador:Mircoprocesador|control:control            ; control               ; work         ;
+;       |fetch:Fetch|                            ; 65 (0)              ; 32 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|microprocesador:Mircoprocesador|fetch:Fetch                ; fetch                 ; work         ;
 ;          |contador:u2|                         ; 5 (5)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|microprocesador:Mircoprocesador|fetch:Fetch|contador:u2    ; contador              ; work         ;
-;          |fetchRom:u3|                         ; 10 (10)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|microprocesador:Mircoprocesador|fetch:Fetch|fetchRom:u3    ; fetchRom              ; work         ;
+;          |fetchRom:u3|                         ; 11 (11)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|microprocesador:Mircoprocesador|fetch:Fetch|fetchRom:u3    ; fetchRom              ; work         ;
 ;          |relojlento:u1|                       ; 49 (49)             ; 28 (28)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1  ; relojlento            ; work         ;
+;       |ram:memoria|                            ; 40 (40)             ; 36 (36)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|microprocesador:Mircoprocesador|ram:memoria                ; ram                   ; work         ;
 +------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------+-----------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -313,6 +315,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; VGA:salVGA|hw_image_generator:displayA|red[1]            ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
 ; VGA:salVGA|hw_image_generator:displayB|red[1]            ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
 ; VGA:salVGA|hw_image_generator_OP:displayOp1|red[1]       ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
+; VGA:salVGA|hw_image_generator_OP:displayOp2|red[1]       ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
 ; VGA:salVGA|hw_image_generator:displayR1|red[1]           ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
 ; VGA:salVGA|hw_image_generator:displayR0|red[1]           ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
 ; VGA:salVGA|hw_image_generator_OP:displayIgual|red[1]     ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
@@ -321,6 +324,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; VGA:salVGA|hw_image_generator:displayA|red[2]            ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
 ; VGA:salVGA|hw_image_generator:displayB|red[2]            ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
 ; VGA:salVGA|hw_image_generator_OP:displayOp1|red[2]       ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
+; VGA:salVGA|hw_image_generator_OP:displayOp2|red[2]       ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
 ; VGA:salVGA|hw_image_generator:displayR1|red[2]           ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
 ; VGA:salVGA|hw_image_generator:displayR0|red[2]           ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
 ; VGA:salVGA|hw_image_generator_OP:displayIgual|red[2]     ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
@@ -329,12 +333,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; VGA:salVGA|hw_image_generator:displayA|red[3]            ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
 ; VGA:salVGA|hw_image_generator:displayB|red[3]            ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
 ; VGA:salVGA|hw_image_generator_OP:displayOp1|red[3]       ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
+; VGA:salVGA|hw_image_generator_OP:displayOp2|red[3]       ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
 ; VGA:salVGA|hw_image_generator:displayR1|red[3]           ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
 ; VGA:salVGA|hw_image_generator:displayR0|red[3]           ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
 ; VGA:salVGA|hw_image_generator_OP:displayIgual|red[3]     ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
 ; VGA:salVGA|hw_image_generator:displayInstruccion0|red[3] ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
 ; VGA:salVGA|hw_image_generator:displayInstruccion1|red[3] ; VGA:salVGA|vga_controller:controllerVGA|disp_ena ; yes                    ;
-; Number of user-specified and inferred latches = 34       ;                                                  ;                        ;
+; Number of user-specified and inferred latches = 37       ;                                                  ;                        ;
 +----------------------------------------------------------+--------------------------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
@@ -355,12 +360,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 119   ;
+; Total registers                              ; 155   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 51    ;
+; Number of registers using Clock Enable       ; 81    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -372,8 +377,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------------+---------+
 ; VGA:salVGA|vga_controller:controllerVGA|row[0]     ; 7       ;
 ; VGA:salVGA|vga_controller:controllerVGA|row[31]    ; 15      ;
-; VGA:salVGA|vga_controller:controllerVGA|column[31] ; 7       ;
-; VGA:salVGA|vga_controller:controllerVGA|column[0]  ; 8       ;
+; VGA:salVGA|vga_controller:controllerVGA|column[0]  ; 9       ;
+; VGA:salVGA|vga_controller:controllerVGA|column[31] ; 9       ;
 ; Total number of inverted registers = 4             ;         ;
 +----------------------------------------------------+---------+
 
@@ -383,9 +388,9 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                              ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |top|VGA:salVGA|vga_controller:controllerVGA|v_count                    ;
 ; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |top|microprocesador:Mircoprocesador|alu:Alu|ua:ua1|mux4x1AU:u1|Mux1    ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |top|microprocesador:Mircoprocesador|alu:Alu|mux2x1ALU:muxalu|salALU[0] ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |top|VGA:salVGA|vga_controller:controllerVGA|v_count                    ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |top|microprocesador:Mircoprocesador|alu:Alu|mux2x1ALU:muxalu|salALU[2] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------+
 
 
@@ -757,22 +762,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 20                          ;
-; cycloneiii_ff         ; 119                         ;
-;     ENA               ; 51                          ;
-;     plain             ; 68                          ;
-; cycloneiii_lcell_comb ; 479                         ;
+; cycloneiii_ff         ; 155                         ;
+;     ENA               ; 81                          ;
+;     plain             ; 74                          ;
+; cycloneiii_lcell_comb ; 522                         ;
 ;     arith             ; 48                          ;
-;         2 data inputs ; 45                          ;
-;         3 data inputs ; 3                           ;
-;     normal            ; 431                         ;
+;         2 data inputs ; 44                          ;
+;         3 data inputs ; 4                           ;
+;     normal            ; 474                         ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 19                          ;
-;         2 data inputs ; 42                          ;
-;         3 data inputs ; 71                          ;
-;         4 data inputs ; 297                         ;
+;         1 data inputs ; 18                          ;
+;         2 data inputs ; 49                          ;
+;         3 data inputs ; 94                          ;
+;         4 data inputs ; 311                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 11.00                       ;
-; Average LUT depth     ; 5.75                        ;
+; Max LUT depth         ; 10.00                       ;
+; Average LUT depth     ; 5.23                        ;
 +-----------------------+-----------------------------+
 
 
@@ -791,7 +796,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Sun Jan 03 03:20:18 2021
+    Info: Processing started: Tue Jan 12 03:26:51 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off microprocesador -c microprocesador
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -856,7 +861,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file fetch.v
     Info (12022): Found design unit 1: fetch-behavior File: C:/Users/carlo/Desktop/VLSI/Proyecto05/fetch.vhd Line: 12
     Info (12023): Found entity 1: fetch File: C:/Users/carlo/Desktop/VLSI/Proyecto05/fetch.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file decoder.vhd
-    Info (12022): Found design unit 1: decoder-behavior File: C:/Users/carlo/Desktop/VLSI/Proyecto05/decoder.vhd Line: 15
+    Info (12022): Found design unit 1: decoder-behavior File: C:/Users/carlo/Desktop/VLSI/Proyecto05/decoder.vhd Line: 16
     Info (12023): Found entity 1: decoder File: C:/Users/carlo/Desktop/VLSI/Proyecto05/decoder.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file microprocesador.vhd
     Info (12022): Found design unit 1: microprocesador-behavior File: C:/Users/carlo/Desktop/VLSI/Proyecto05/microprocesador.vhd Line: 15
@@ -867,19 +872,23 @@ Info (12021): Found 2 design units, including 1 entities, in source file top.vhd
 Info (12021): Found 2 design units, including 1 entities, in source file regs.vhd
     Info (12022): Found design unit 1: REGs-behavior File: C:/Users/carlo/Desktop/VLSI/Proyecto05/REGs.vhd Line: 15
     Info (12023): Found entity 1: REGs File: C:/Users/carlo/Desktop/VLSI/Proyecto05/REGs.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file control.vhd
+    Info (12022): Found design unit 1: control-behavior File: C:/Users/carlo/Desktop/VLSI/Proyecto05/control.vhd Line: 18
+    Info (12023): Found entity 1: control File: C:/Users/carlo/Desktop/VLSI/Proyecto05/control.vhd Line: 5
 Info (12127): Elaborating entity "top" for the top level hierarchy
 Info (12129): Elaborating entity "microprocesador" using architecture "A:behavior" for hierarchy "microprocesador:Mircoprocesador" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/top.vhd Line: 26
+Warning (10541): VHDL Signal Declaration warning at microprocesador.vhd(11): used implicit default value for signal "sbits" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/carlo/Desktop/VLSI/Proyecto05/microprocesador.vhd Line: 11
 Warning (10036): Verilog HDL or VHDL warning at microprocesador.vhd(22): object "cout" assigned a value but never read File: C:/Users/carlo/Desktop/VLSI/Proyecto05/microprocesador.vhd Line: 22
 Warning (10036): Verilog HDL or VHDL warning at microprocesador.vhd(32): object "slowClk" assigned a value but never read File: C:/Users/carlo/Desktop/VLSI/Proyecto05/microprocesador.vhd Line: 32
-Warning (10541): VHDL Signal Declaration warning at microprocesador.vhd(34): used implicit default value for signal "help" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/carlo/Desktop/VLSI/Proyecto05/microprocesador.vhd Line: 34
-Info (12129): Elaborating entity "fetch" using architecture "A:behavior" for hierarchy "microprocesador:Mircoprocesador|fetch:Fetch" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/microprocesador.vhd Line: 39
+Info (12129): Elaborating entity "fetch" using architecture "A:behavior" for hierarchy "microprocesador:Mircoprocesador|fetch:Fetch" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/microprocesador.vhd Line: 47
 Info (12129): Elaborating entity "relojlento" using architecture "A:behavior" for hierarchy "microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/fetch.vhd Line: 17
 Info (12129): Elaborating entity "contador" using architecture "A:behavior" for hierarchy "microprocesador:Mircoprocesador|fetch:Fetch|contador:u2" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/fetch.vhd Line: 18
 Info (12129): Elaborating entity "fetchRom" using architecture "A:behavior" for hierarchy "microprocesador:Mircoprocesador|fetch:Fetch|fetchRom:u3" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/fetch.vhd Line: 19
 Warning (10541): VHDL Signal Declaration warning at fetchRom.vhd(17): used implicit default value for signal "mem_rom" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/carlo/Desktop/VLSI/Proyecto05/fetchRom.vhd Line: 17
 Warning (10492): VHDL Process Statement warning at fetchRom.vhd(26): signal "mem_rom" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/fetchRom.vhd Line: 26
-Info (12129): Elaborating entity "decoder" using architecture "A:behavior" for hierarchy "microprocesador:Mircoprocesador|decoder:Decoder" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/microprocesador.vhd Line: 40
-Info (12129): Elaborating entity "alu" using architecture "A:arq" for hierarchy "microprocesador:Mircoprocesador|alu:Alu" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/microprocesador.vhd Line: 42
+Info (12129): Elaborating entity "decoder" using architecture "A:behavior" for hierarchy "microprocesador:Mircoprocesador|decoder:Decoder" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/microprocesador.vhd Line: 48
+Info (12129): Elaborating entity "control" using architecture "A:behavior" for hierarchy "microprocesador:Mircoprocesador|control:control" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/microprocesador.vhd Line: 50
+Info (12129): Elaborating entity "alu" using architecture "A:arq" for hierarchy "microprocesador:Mircoprocesador|alu:Alu" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/microprocesador.vhd Line: 52
 Warning (10492): VHDL Process Statement warning at alu.vhd(41): signal "s_salALU" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/alu.vhd Line: 41
 Warning (10492): VHDL Process Statement warning at alu.vhd(44): signal "s_salALU" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/alu.vhd Line: 44
 Info (12129): Elaborating entity "ua" using architecture "A:arq" for hierarchy "microprocesador:Mircoprocesador|alu:Alu|ua:ua1" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/alu.vhd Line: 22
@@ -888,9 +897,11 @@ Info (12129): Elaborating entity "sum3bit" using architecture "A:arq" for hierar
 Info (12129): Elaborating entity "ul" using architecture "A:arq" for hierarchy "microprocesador:Mircoprocesador|alu:Alu|ul:ul1" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/alu.vhd Line: 25
 Info (12129): Elaborating entity "mux2x1ALU" using architecture "A:arq" for hierarchy "microprocesador:Mircoprocesador|alu:Alu|mux2x1ALU:muxalu" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/alu.vhd Line: 28
 Info (12129): Elaborating entity "bcd2x7seg" using architecture "A:arq" for hierarchy "microprocesador:Mircoprocesador|alu:Alu|bcd2x7seg:alu7seg" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/alu.vhd Line: 31
-Info (12129): Elaborating entity "REGs" using architecture "A:behavior" for hierarchy "microprocesador:Mircoprocesador|REGs:registers" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/microprocesador.vhd Line: 48
-Warning (10492): VHDL Process Statement warning at REGs.vhd(30): signal "wrEn" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/REGs.vhd Line: 30
-Info (12129): Elaborating entity "bcd7seg" using architecture "A:arq" for hierarchy "microprocesador:Mircoprocesador|bcd7seg:numA" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/microprocesador.vhd Line: 50
+Info (12129): Elaborating entity "REGs" using architecture "A:behavior" for hierarchy "microprocesador:Mircoprocesador|REGs:registers" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/microprocesador.vhd Line: 58
+Warning (10492): VHDL Process Statement warning at REGs.vhd(28): signal "wrEn" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/REGs.vhd Line: 28
+Info (12129): Elaborating entity "ram" using architecture "A:behavior" for hierarchy "microprocesador:Mircoprocesador|ram:memoria" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/microprocesador.vhd Line: 60
+Warning (10492): VHDL Process Statement warning at ram.vhd(30): signal "wrEn" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/carlo/Desktop/VLSI/Proyecto05/ram.vhd Line: 30
+Info (12129): Elaborating entity "bcd7seg" using architecture "A:arq" for hierarchy "microprocesador:Mircoprocesador|bcd7seg:numA" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/microprocesador.vhd Line: 63
 Info (12129): Elaborating entity "VGA" using architecture "A:behavioral" for hierarchy "VGA:salVGA" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/top.vhd Line: 27
 Info (12129): Elaborating entity "Gen25MHz" using architecture "A:behavior" for hierarchy "VGA:salVGA|Gen25MHz:VGAclk" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/VGA.vhd Line: 47
 Info (12129): Elaborating entity "vga_controller" using architecture "A:behavior" for hierarchy "VGA:salVGA|vga_controller:controllerVGA" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/VGA.vhd Line: 49
@@ -1060,6 +1071,7 @@ Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
     Warning (13049): Converted tri-state buffer "microprocesador:Mircoprocesador|fetch:Fetch|fetchRom:u3|bus_datos[0]" feeding internal logic into a wire File: C:/Users/carlo/Desktop/VLSI/Proyecto05/fetchRom.vhd Line: 9
     Warning (13049): Converted tri-state buffer "microprocesador:Mircoprocesador|fetch:Fetch|fetchRom:u3|bus_datos[1]" feeding internal logic into a wire File: C:/Users/carlo/Desktop/VLSI/Proyecto05/fetchRom.vhd Line: 9
     Warning (13049): Converted tri-state buffer "microprocesador:Mircoprocesador|fetch:Fetch|fetchRom:u3|bus_datos[2]" feeding internal logic into a wire File: C:/Users/carlo/Desktop/VLSI/Proyecto05/fetchRom.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "microprocesador:Mircoprocesador|fetch:Fetch|fetchRom:u3|bus_datos[3]" feeding internal logic into a wire File: C:/Users/carlo/Desktop/VLSI/Proyecto05/fetchRom.vhd Line: 9
     Warning (13049): Converted tri-state buffer "microprocesador:Mircoprocesador|fetch:Fetch|fetchRom:u3|bus_datos[4]" feeding internal logic into a wire File: C:/Users/carlo/Desktop/VLSI/Proyecto05/fetchRom.vhd Line: 9
     Warning (13049): Converted tri-state buffer "microprocesador:Mircoprocesador|fetch:Fetch|fetchRom:u3|bus_datos[5]" feeding internal logic into a wire File: C:/Users/carlo/Desktop/VLSI/Proyecto05/fetchRom.vhd Line: 9
     Warning (13049): Converted tri-state buffer "microprocesador:Mircoprocesador|fetch:Fetch|fetchRom:u3|bus_datos[6]" feeding internal logic into a wire File: C:/Users/carlo/Desktop/VLSI/Proyecto05/fetchRom.vhd Line: 9
@@ -1070,9 +1082,12 @@ Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
     Warning (13049): Converted tri-state buffer "microprocesador:Mircoprocesador|fetch:Fetch|fetchRom:u3|bus_datos[11]" feeding internal logic into a wire File: C:/Users/carlo/Desktop/VLSI/Proyecto05/fetchRom.vhd Line: 9
     Warning (13049): Converted tri-state buffer "microprocesador:Mircoprocesador|fetch:Fetch|fetchRom:u3|bus_datos[12]" feeding internal logic into a wire File: C:/Users/carlo/Desktop/VLSI/Proyecto05/fetchRom.vhd Line: 9
     Warning (13049): Converted tri-state buffer "microprocesador:Mircoprocesador|fetch:Fetch|fetchRom:u3|bus_datos[13]" feeding internal logic into a wire File: C:/Users/carlo/Desktop/VLSI/Proyecto05/fetchRom.vhd Line: 9
-Info (276014): Found 2 instances of uninferred RAM logic
+    Warning (13049): Converted tri-state buffer "microprocesador:Mircoprocesador|fetch:Fetch|fetchRom:u3|bus_datos[14]" feeding internal logic into a wire File: C:/Users/carlo/Desktop/VLSI/Proyecto05/fetchRom.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "microprocesador:Mircoprocesador|fetch:Fetch|fetchRom:u3|bus_datos[15]" feeding internal logic into a wire File: C:/Users/carlo/Desktop/VLSI/Proyecto05/fetchRom.vhd Line: 9
+Info (276014): Found 3 instances of uninferred RAM logic
     Info (276013): RAM logic "microprocesador:Mircoprocesador|fetch:Fetch|fetchRom:u3|mem_rom" is uninferred because MIF is not supported for the selected family File: C:/Users/carlo/Desktop/VLSI/Proyecto05/fetchRom.vhd Line: 17
-    Info (276013): RAM logic "microprocesador:Mircoprocesador|REGs:registers|memory" is uninferred because MIF is not supported for the selected family File: C:/Users/carlo/Desktop/VLSI/Proyecto05/REGs.vhd Line: 17
+    Info (276004): RAM logic "microprocesador:Mircoprocesador|REGs:registers|memory" is uninferred due to inappropriate RAM size File: C:/Users/carlo/Desktop/VLSI/Proyecto05/REGs.vhd Line: 17
+    Info (276013): RAM logic "microprocesador:Mircoprocesador|ram:memoria|memory" is uninferred because MIF is not supported for the selected family File: C:/Users/carlo/Desktop/VLSI/Proyecto05/ram.vhd Line: 17
 Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
     Info (13026): Duplicate LATCH primitive "VGA:salVGA|hw_image_generator:displayA|red[3]" merged with LATCH primitive "VGA:salVGA|hw_image_generator:displayA|red[1]" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 50
     Info (13026): Duplicate LATCH primitive "VGA:salVGA|hw_image_generator:displayA|red[2]" merged with LATCH primitive "VGA:salVGA|hw_image_generator:displayA|red[1]" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 50
@@ -1080,6 +1095,8 @@ Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
     Info (13026): Duplicate LATCH primitive "VGA:salVGA|hw_image_generator:displayB|red[2]" merged with LATCH primitive "VGA:salVGA|hw_image_generator:displayB|red[1]" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 50
     Info (13026): Duplicate LATCH primitive "VGA:salVGA|hw_image_generator_OP:displayOp1|red[3]" merged with LATCH primitive "VGA:salVGA|hw_image_generator_OP:displayOp1|red[1]" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 47
     Info (13026): Duplicate LATCH primitive "VGA:salVGA|hw_image_generator_OP:displayOp1|red[2]" merged with LATCH primitive "VGA:salVGA|hw_image_generator_OP:displayOp1|red[1]" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 47
+    Info (13026): Duplicate LATCH primitive "VGA:salVGA|hw_image_generator_OP:displayOp2|red[3]" merged with LATCH primitive "VGA:salVGA|hw_image_generator_OP:displayOp2|red[1]" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 47
+    Info (13026): Duplicate LATCH primitive "VGA:salVGA|hw_image_generator_OP:displayOp2|red[2]" merged with LATCH primitive "VGA:salVGA|hw_image_generator_OP:displayOp2|red[1]" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator_OP.vhd Line: 47
     Info (13026): Duplicate LATCH primitive "VGA:salVGA|hw_image_generator:displayR1|red[3]" merged with LATCH primitive "VGA:salVGA|hw_image_generator:displayR1|red[1]" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 50
     Info (13026): Duplicate LATCH primitive "VGA:salVGA|hw_image_generator:displayR1|red[2]" merged with LATCH primitive "VGA:salVGA|hw_image_generator:displayR1|red[1]" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 50
     Info (13026): Duplicate LATCH primitive "VGA:salVGA|hw_image_generator:displayR0|red[3]" merged with LATCH primitive "VGA:salVGA|hw_image_generator:displayR0|red[1]" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/hw_image_generator.vhd Line: 50
@@ -1107,14 +1124,14 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "cs" File: C:/Users/carlo/Desktop/VLSI/Proyecto05/top.vhd Line: 7
-Info (21057): Implemented 554 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 631 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 17 output pins
-    Info (21061): Implemented 534 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 172 warnings
-    Info: Peak virtual memory: 4816 megabytes
-    Info: Processing ended: Sun Jan 03 03:20:33 2021
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:25
+    Info (21061): Implemented 611 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 176 warnings
+    Info: Peak virtual memory: 4802 megabytes
+    Info: Processing ended: Tue Jan 12 03:27:02 2021
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:24
 
 
