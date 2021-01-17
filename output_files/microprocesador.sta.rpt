@@ -1,5 +1,5 @@
 Timing Analyzer report for microprocesador
-Tue Jan 12 03:27:25 2021
+Sun Jan 17 13:57:36 2021
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -92,13 +92,13 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.24        ;
+; Average used               ; 1.19        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   8.2%      ;
-;     Processors 3-4         ;   8.0%      ;
+;     Processor 2            ;   6.5%      ;
+;     Processors 3-4         ;   6.4%      ;
 +----------------------------+-------------+
 
 
@@ -119,9 +119,9 @@ https://fpgasoftware.intel.com/eula.
 +------------+-----------------+---------------------------------------------------------------+------------------------------------------------+
 ; Fmax       ; Restricted Fmax ; Clock Name                                                    ; Note                                           ;
 +------------+-----------------+---------------------------------------------------------------+------------------------------------------------+
-; 145.31 MHz ; 145.31 MHz      ; clk                                                           ;                                                ;
-; 199.96 MHz ; 199.96 MHz      ; VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0                      ;                                                ;
-; 632.51 MHz ; 416.15 MHz      ; microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led ; limit due to minimum period restriction (tmin) ;
+; 121.65 MHz ; 121.65 MHz      ; clk                                                           ;                                                ;
+; 187.02 MHz ; 187.02 MHz      ; VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0                      ;                                                ;
+; 676.59 MHz ; 416.15 MHz      ; microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led ; limit due to minimum period restriction (tmin) ;
 +------------+-----------------+---------------------------------------------------------------+------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -131,10 +131,10 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------------------------------------------------+--------+---------------+
 ; Clock                                                         ; Slack  ; End Point TNS ;
 +---------------------------------------------------------------+--------+---------------+
-; VGA:salVGA|vga_controller:controllerVGA|disp_ena              ; -6.945 ; -94.536       ;
-; clk                                                           ; -4.448 ; -331.312      ;
-; VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0                      ; -4.001 ; -134.871      ;
-; microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led ; -0.581 ; -1.442        ;
+; VGA:salVGA|vga_controller:controllerVGA|disp_ena              ; -7.267 ; -94.748       ;
+; clk                                                           ; -4.387 ; -336.996      ;
+; VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0                      ; -4.347 ; -136.373      ;
+; microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led ; -0.478 ; -0.858        ;
 +---------------------------------------------------------------+--------+---------------+
 
 
@@ -143,10 +143,10 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------------------------------------------------+-------+---------------+
 ; Clock                                                         ; Slack ; End Point TNS ;
 +---------------------------------------------------------------+-------+---------------+
-; VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0                      ; 0.342 ; 0.000         ;
-; microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led ; 0.343 ; 0.000         ;
-; clk                                                           ; 0.642 ; 0.000         ;
-; VGA:salVGA|vga_controller:controllerVGA|disp_ena              ; 1.608 ; 0.000         ;
+; VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0                      ; 0.341 ; 0.000         ;
+; microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led ; 0.342 ; 0.000         ;
+; clk                                                           ; 0.530 ; 0.000         ;
+; VGA:salVGA|vga_controller:controllerVGA|disp_ena              ; 0.938 ; 0.000         ;
 +---------------------------------------------------------------+-------+---------------+
 
 
@@ -170,7 +170,7 @@ No paths to report.
 ; clk                                                           ; -3.000 ; -153.121      ;
 ; VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0                      ; -1.403 ; -61.732       ;
 ; microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led ; -1.403 ; -5.612        ;
-; VGA:salVGA|vga_controller:controllerVGA|disp_ena              ; 0.369  ; 0.000         ;
+; VGA:salVGA|vga_controller:controllerVGA|disp_ena              ; 0.410  ; 0.000         ;
 +---------------------------------------------------------------+--------+---------------+
 
 
@@ -185,9 +185,9 @@ No synchronizer chains to report.
 +------------+-----------------+---------------------------------------------------------------+------------------------------------------------+
 ; Fmax       ; Restricted Fmax ; Clock Name                                                    ; Note                                           ;
 +------------+-----------------+---------------------------------------------------------------+------------------------------------------------+
-; 157.28 MHz ; 157.28 MHz      ; clk                                                           ;                                                ;
-; 217.16 MHz ; 217.16 MHz      ; VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0                      ;                                                ;
-; 690.61 MHz ; 416.15 MHz      ; microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led ; limit due to minimum period restriction (tmin) ;
+; 133.01 MHz ; 133.01 MHz      ; clk                                                           ;                                                ;
+; 202.84 MHz ; 202.84 MHz      ; VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0                      ;                                                ;
+; 739.1 MHz  ; 416.15 MHz      ; microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led ; limit due to minimum period restriction (tmin) ;
 +------------+-----------------+---------------------------------------------------------------+------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -197,10 +197,10 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------------------------------------------------+--------+---------------+
 ; Clock                                                         ; Slack  ; End Point TNS ;
 +---------------------------------------------------------------+--------+---------------+
-; VGA:salVGA|vga_controller:controllerVGA|disp_ena              ; -6.380 ; -87.389       ;
-; clk                                                           ; -4.037 ; -300.301      ;
-; VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0                      ; -3.605 ; -121.014      ;
-; microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led ; -0.448 ; -1.038        ;
+; VGA:salVGA|vga_controller:controllerVGA|disp_ena              ; -6.796 ; -87.836       ;
+; clk                                                           ; -4.084 ; -306.948      ;
+; VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0                      ; -3.930 ; -122.179      ;
+; microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led ; -0.353 ; -0.530        ;
 +---------------------------------------------------------------+--------+---------------+
 
 
@@ -209,10 +209,10 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------------------------------------------------+-------+---------------+
 ; Clock                                                         ; Slack ; End Point TNS ;
 +---------------------------------------------------------------+-------+---------------+
-; VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0                      ; 0.308 ; 0.000         ;
-; microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led ; 0.308 ; 0.000         ;
-; clk                                                           ; 0.594 ; 0.000         ;
-; VGA:salVGA|vga_controller:controllerVGA|disp_ena              ; 1.567 ; 0.000         ;
+; VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0                      ; 0.306 ; 0.000         ;
+; microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led ; 0.307 ; 0.000         ;
+; clk                                                           ; 0.501 ; 0.000         ;
+; VGA:salVGA|vga_controller:controllerVGA|disp_ena              ; 0.955 ; 0.000         ;
 +---------------------------------------------------------------+-------+---------------+
 
 
@@ -236,7 +236,7 @@ No paths to report.
 ; clk                                                           ; -3.000 ; -153.121      ;
 ; VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0                      ; -1.403 ; -61.732       ;
 ; microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led ; -1.403 ; -5.612        ;
-; VGA:salVGA|vga_controller:controllerVGA|disp_ena              ; 0.438  ; 0.000         ;
+; VGA:salVGA|vga_controller:controllerVGA|disp_ena              ; 0.453  ; 0.000         ;
 +---------------------------------------------------------------+--------+---------------+
 
 
@@ -251,10 +251,10 @@ No synchronizer chains to report.
 +---------------------------------------------------------------+--------+---------------+
 ; Clock                                                         ; Slack  ; End Point TNS ;
 +---------------------------------------------------------------+--------+---------------+
-; VGA:salVGA|vga_controller:controllerVGA|disp_ena              ; -2.539 ; -32.864       ;
-; clk                                                           ; -1.408 ; -87.619       ;
-; VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0                      ; -1.094 ; -30.902       ;
-; microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led ; 0.338  ; 0.000         ;
+; VGA:salVGA|vga_controller:controllerVGA|disp_ena              ; -2.846 ; -32.088       ;
+; clk                                                           ; -1.571 ; -91.726       ;
+; VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0                      ; -1.243 ; -31.344       ;
+; microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led ; 0.387  ; 0.000         ;
 +---------------------------------------------------------------+--------+---------------+
 
 
@@ -263,10 +263,10 @@ No synchronizer chains to report.
 +---------------------------------------------------------------+-------+---------------+
 ; Clock                                                         ; Slack ; End Point TNS ;
 +---------------------------------------------------------------+-------+---------------+
-; VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0                      ; 0.148 ; 0.000         ;
-; microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led ; 0.150 ; 0.000         ;
-; clk                                                           ; 0.247 ; 0.000         ;
-; VGA:salVGA|vga_controller:controllerVGA|disp_ena              ; 0.812 ; 0.000         ;
+; VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0                      ; 0.149 ; 0.000         ;
+; microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led ; 0.149 ; 0.000         ;
+; clk                                                           ; 0.198 ; 0.000         ;
+; VGA:salVGA|vga_controller:controllerVGA|disp_ena              ; 0.517 ; 0.000         ;
 +---------------------------------------------------------------+-------+---------------+
 
 
@@ -287,10 +287,10 @@ No paths to report.
 +---------------------------------------------------------------+--------+---------------+
 ; Clock                                                         ; Slack  ; End Point TNS ;
 +---------------------------------------------------------------+--------+---------------+
-; clk                                                           ; -3.000 ; -114.554      ;
+; clk                                                           ; -3.000 ; -114.690      ;
 ; VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0                      ; -1.000 ; -44.000       ;
 ; microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led ; -1.000 ; -4.000        ;
-; VGA:salVGA|vga_controller:controllerVGA|disp_ena              ; 0.326  ; 0.000         ;
+; VGA:salVGA|vga_controller:controllerVGA|disp_ena              ; 0.341  ; 0.000         ;
 +---------------------------------------------------------------+--------+---------------+
 
 
@@ -305,16 +305,16 @@ No synchronizer chains to report.
 +----------------------------------------------------------------+----------+-------+----------+---------+---------------------+
 ; Clock                                                          ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +----------------------------------------------------------------+----------+-------+----------+---------+---------------------+
-; Worst-case Slack                                               ; -6.945   ; 0.148 ; N/A      ; N/A     ; -3.000              ;
-;  VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0                      ; -4.001   ; 0.148 ; N/A      ; N/A     ; -1.403              ;
-;  VGA:salVGA|vga_controller:controllerVGA|disp_ena              ; -6.945   ; 0.812 ; N/A      ; N/A     ; 0.326               ;
-;  clk                                                           ; -4.448   ; 0.247 ; N/A      ; N/A     ; -3.000              ;
-;  microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led ; -0.581   ; 0.150 ; N/A      ; N/A     ; -1.403              ;
-; Design-wide TNS                                                ; -562.161 ; 0.0   ; 0.0      ; 0.0     ; -220.465            ;
-;  VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0                      ; -134.871 ; 0.000 ; N/A      ; N/A     ; -61.732             ;
-;  VGA:salVGA|vga_controller:controllerVGA|disp_ena              ; -94.536  ; 0.000 ; N/A      ; N/A     ; 0.000               ;
-;  clk                                                           ; -331.312 ; 0.000 ; N/A      ; N/A     ; -153.121            ;
-;  microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led ; -1.442   ; 0.000 ; N/A      ; N/A     ; -5.612              ;
+; Worst-case Slack                                               ; -7.267   ; 0.149 ; N/A      ; N/A     ; -3.000              ;
+;  VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0                      ; -4.347   ; 0.149 ; N/A      ; N/A     ; -1.403              ;
+;  VGA:salVGA|vga_controller:controllerVGA|disp_ena              ; -7.267   ; 0.517 ; N/A      ; N/A     ; 0.341               ;
+;  clk                                                           ; -4.387   ; 0.198 ; N/A      ; N/A     ; -3.000              ;
+;  microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led ; -0.478   ; 0.149 ; N/A      ; N/A     ; -1.403              ;
+; Design-wide TNS                                                ; -568.975 ; 0.0   ; 0.0      ; 0.0     ; -220.465            ;
+;  VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0                      ; -136.373 ; 0.000 ; N/A      ; N/A     ; -61.732             ;
+;  VGA:salVGA|vga_controller:controllerVGA|disp_ena              ; -94.748  ; 0.000 ; N/A      ; N/A     ; 0.000               ;
+;  clk                                                           ; -336.996 ; 0.000 ; N/A      ; N/A     ; -153.121            ;
+;  microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led ; -0.858   ; 0.000 ; N/A      ; N/A     ; -5.612              ;
 +----------------------------------------------------------------+----------+-------+----------+---------+---------------------+
 
 
@@ -446,13 +446,13 @@ No synchronizer chains to report.
 ; From Clock                                                    ; To Clock                                                      ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------------------------------------------------+---------------------------------------------------------------+----------+----------+----------+----------+
 ; clk                                                           ; clk                                                           ; 831      ; 72       ; 87       ; 252      ;
-; microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led ; clk                                                           ; 114      ; 1        ; 454      ; 0        ;
+; microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led ; clk                                                           ; 168      ; 1        ; 1320     ; 0        ;
 ; VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0                      ; clk                                                           ; 1        ; 1        ; 0        ; 0        ;
 ; microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led ; microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led ; 10       ; 0        ; 0        ; 0        ;
-; VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0                      ; VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0                      ; 3200     ; 0        ; 0        ; 0        ;
-; clk                                                           ; VGA:salVGA|vga_controller:controllerVGA|disp_ena              ; 0        ; 0        ; 179      ; 0        ;
-; microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led ; VGA:salVGA|vga_controller:controllerVGA|disp_ena              ; 0        ; 0        ; 1218     ; 0        ;
-; VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0                      ; VGA:salVGA|vga_controller:controllerVGA|disp_ena              ; 0        ; 0        ; 3152     ; 0        ;
+; VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0                      ; VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0                      ; 3020     ; 0        ; 0        ; 0        ;
+; clk                                                           ; VGA:salVGA|vga_controller:controllerVGA|disp_ena              ; 0        ; 0        ; 171      ; 0        ;
+; microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led ; VGA:salVGA|vga_controller:controllerVGA|disp_ena              ; 0        ; 0        ; 2083     ; 0        ;
+; VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0                      ; VGA:salVGA|vga_controller:controllerVGA|disp_ena              ; 0        ; 0        ; 3229     ; 0        ;
 +---------------------------------------------------------------+---------------------------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -463,13 +463,13 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 ; From Clock                                                    ; To Clock                                                      ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------------------------------------------------+---------------------------------------------------------------+----------+----------+----------+----------+
 ; clk                                                           ; clk                                                           ; 831      ; 72       ; 87       ; 252      ;
-; microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led ; clk                                                           ; 114      ; 1        ; 454      ; 0        ;
+; microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led ; clk                                                           ; 168      ; 1        ; 1320     ; 0        ;
 ; VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0                      ; clk                                                           ; 1        ; 1        ; 0        ; 0        ;
 ; microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led ; microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led ; 10       ; 0        ; 0        ; 0        ;
-; VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0                      ; VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0                      ; 3200     ; 0        ; 0        ; 0        ;
-; clk                                                           ; VGA:salVGA|vga_controller:controllerVGA|disp_ena              ; 0        ; 0        ; 179      ; 0        ;
-; microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led ; VGA:salVGA|vga_controller:controllerVGA|disp_ena              ; 0        ; 0        ; 1218     ; 0        ;
-; VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0                      ; VGA:salVGA|vga_controller:controllerVGA|disp_ena              ; 0        ; 0        ; 3152     ; 0        ;
+; VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0                      ; VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0                      ; 3020     ; 0        ; 0        ; 0        ;
+; clk                                                           ; VGA:salVGA|vga_controller:controllerVGA|disp_ena              ; 0        ; 0        ; 171      ; 0        ;
+; microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led ; VGA:salVGA|vga_controller:controllerVGA|disp_ena              ; 0        ; 0        ; 2083     ; 0        ;
+; VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0                      ; VGA:salVGA|vga_controller:controllerVGA|disp_ena              ; 0        ; 0        ; 3229     ; 0        ;
 +---------------------------------------------------------------+---------------------------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -496,7 +496,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Unconstrained Input Ports       ; 1     ; 1    ;
 ; Unconstrained Input Port Paths  ; 64    ; 64   ;
 ; Unconstrained Output Ports      ; 6     ; 6    ;
-; Unconstrained Output Port Paths ; 36    ; 36   ;
+; Unconstrained Output Port Paths ; 42    ; 42   ;
 +---------------------------------+-------+------+
 
 
@@ -564,14 +564,14 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Tue Jan 12 03:27:22 2021
+    Info: Processing started: Sun Jan 17 13:57:31 2021
 Info: Command: quartus_sta microprocesador -c microprocesador
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
-Warning (335093): The Timing Analyzer is analyzing 18 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
+Warning (335093): The Timing Analyzer is analyzing 20 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'microprocesador.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
 Info (332105): Deriving Clocks
@@ -585,20 +585,20 @@ Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -6.945
+Info (332146): Worst-case setup slack is -7.267
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -6.945             -94.536 VGA:salVGA|vga_controller:controllerVGA|disp_ena 
-    Info (332119):    -4.448            -331.312 clk 
-    Info (332119):    -4.001            -134.871 VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0 
-    Info (332119):    -0.581              -1.442 microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led 
-Info (332146): Worst-case hold slack is 0.342
+    Info (332119):    -7.267             -94.748 VGA:salVGA|vga_controller:controllerVGA|disp_ena 
+    Info (332119):    -4.387            -336.996 clk 
+    Info (332119):    -4.347            -136.373 VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0 
+    Info (332119):    -0.478              -0.858 microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led 
+Info (332146): Worst-case hold slack is 0.341
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.342               0.000 VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0 
-    Info (332119):     0.343               0.000 microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led 
-    Info (332119):     0.642               0.000 clk 
-    Info (332119):     1.608               0.000 VGA:salVGA|vga_controller:controllerVGA|disp_ena 
+    Info (332119):     0.341               0.000 VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0 
+    Info (332119):     0.342               0.000 microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led 
+    Info (332119):     0.530               0.000 clk 
+    Info (332119):     0.938               0.000 VGA:salVGA|vga_controller:controllerVGA|disp_ena 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
@@ -607,26 +607,26 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):    -3.000            -153.121 clk 
     Info (332119):    -1.403             -61.732 VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0 
     Info (332119):    -1.403              -5.612 microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led 
-    Info (332119):     0.369               0.000 VGA:salVGA|vga_controller:controllerVGA|disp_ena 
+    Info (332119):     0.410               0.000 VGA:salVGA|vga_controller:controllerVGA|disp_ena 
 Info: Analyzing Slow 1200mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -6.380
+Info (332146): Worst-case setup slack is -6.796
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -6.380             -87.389 VGA:salVGA|vga_controller:controllerVGA|disp_ena 
-    Info (332119):    -4.037            -300.301 clk 
-    Info (332119):    -3.605            -121.014 VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0 
-    Info (332119):    -0.448              -1.038 microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led 
-Info (332146): Worst-case hold slack is 0.308
+    Info (332119):    -6.796             -87.836 VGA:salVGA|vga_controller:controllerVGA|disp_ena 
+    Info (332119):    -4.084            -306.948 clk 
+    Info (332119):    -3.930            -122.179 VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0 
+    Info (332119):    -0.353              -0.530 microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led 
+Info (332146): Worst-case hold slack is 0.306
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.308               0.000 VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0 
-    Info (332119):     0.308               0.000 microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led 
-    Info (332119):     0.594               0.000 clk 
-    Info (332119):     1.567               0.000 VGA:salVGA|vga_controller:controllerVGA|disp_ena 
+    Info (332119):     0.306               0.000 VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0 
+    Info (332119):     0.307               0.000 microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led 
+    Info (332119):     0.501               0.000 clk 
+    Info (332119):     0.955               0.000 VGA:salVGA|vga_controller:controllerVGA|disp_ena 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
@@ -635,39 +635,39 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):    -3.000            -153.121 clk 
     Info (332119):    -1.403             -61.732 VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0 
     Info (332119):    -1.403              -5.612 microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led 
-    Info (332119):     0.438               0.000 VGA:salVGA|vga_controller:controllerVGA|disp_ena 
+    Info (332119):     0.453               0.000 VGA:salVGA|vga_controller:controllerVGA|disp_ena 
 Info: Analyzing Fast 1200mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -2.539
+Info (332146): Worst-case setup slack is -2.846
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.539             -32.864 VGA:salVGA|vga_controller:controllerVGA|disp_ena 
-    Info (332119):    -1.408             -87.619 clk 
-    Info (332119):    -1.094             -30.902 VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0 
-    Info (332119):     0.338               0.000 microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led 
-Info (332146): Worst-case hold slack is 0.148
+    Info (332119):    -2.846             -32.088 VGA:salVGA|vga_controller:controllerVGA|disp_ena 
+    Info (332119):    -1.571             -91.726 clk 
+    Info (332119):    -1.243             -31.344 VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0 
+    Info (332119):     0.387               0.000 microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led 
+Info (332146): Worst-case hold slack is 0.149
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.148               0.000 VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0 
-    Info (332119):     0.150               0.000 microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led 
-    Info (332119):     0.247               0.000 clk 
-    Info (332119):     0.812               0.000 VGA:salVGA|vga_controller:controllerVGA|disp_ena 
+    Info (332119):     0.149               0.000 VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0 
+    Info (332119):     0.149               0.000 microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led 
+    Info (332119):     0.198               0.000 clk 
+    Info (332119):     0.517               0.000 VGA:salVGA|vga_controller:controllerVGA|disp_ena 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.000            -114.554 clk 
+    Info (332119):    -3.000            -114.690 clk 
     Info (332119):    -1.000             -44.000 VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0 
     Info (332119):    -1.000              -4.000 microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led 
-    Info (332119):     0.326               0.000 VGA:salVGA|vga_controller:controllerVGA|disp_ena 
+    Info (332119):     0.341               0.000 VGA:salVGA|vga_controller:controllerVGA|disp_ena 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 4842 megabytes
-    Info: Processing ended: Tue Jan 12 03:27:25 2021
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Peak virtual memory: 4841 megabytes
+    Info: Processing ended: Sun Jan 17 13:57:36 2021
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:05
 
 

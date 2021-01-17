@@ -3,35 +3,35 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'VGA:salVGA|vga_controller:controllerVGA|disp_ena'
-Slack : -6.945
-TNS   : -94.536
+Slack : -7.267
+TNS   : -94.748
 
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -4.448
-TNS   : -331.312
+Slack : -4.387
+TNS   : -336.996
 
 Type  : Slow 1200mV 85C Model Setup 'VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0'
-Slack : -4.001
-TNS   : -134.871
+Slack : -4.347
+TNS   : -136.373
 
 Type  : Slow 1200mV 85C Model Setup 'microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led'
-Slack : -0.581
-TNS   : -1.442
+Slack : -0.478
+TNS   : -0.858
 
 Type  : Slow 1200mV 85C Model Hold 'VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0'
-Slack : 0.342
+Slack : 0.341
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led'
-Slack : 0.343
+Slack : 0.342
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : 0.642
+Slack : 0.530
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'VGA:salVGA|vga_controller:controllerVGA|disp_ena'
-Slack : 1.608
+Slack : 0.938
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
@@ -47,39 +47,39 @@ Slack : -1.403
 TNS   : -5.612
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'VGA:salVGA|vga_controller:controllerVGA|disp_ena'
-Slack : 0.369
+Slack : 0.410
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'VGA:salVGA|vga_controller:controllerVGA|disp_ena'
-Slack : -6.380
-TNS   : -87.389
+Slack : -6.796
+TNS   : -87.836
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -4.037
-TNS   : -300.301
+Slack : -4.084
+TNS   : -306.948
 
 Type  : Slow 1200mV 0C Model Setup 'VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0'
-Slack : -3.605
-TNS   : -121.014
+Slack : -3.930
+TNS   : -122.179
 
 Type  : Slow 1200mV 0C Model Setup 'microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led'
-Slack : -0.448
-TNS   : -1.038
+Slack : -0.353
+TNS   : -0.530
 
 Type  : Slow 1200mV 0C Model Hold 'VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0'
-Slack : 0.308
+Slack : 0.306
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led'
-Slack : 0.308
+Slack : 0.307
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : 0.594
+Slack : 0.501
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'VGA:salVGA|vga_controller:controllerVGA|disp_ena'
-Slack : 1.567
+Slack : 0.955
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
@@ -95,44 +95,44 @@ Slack : -1.403
 TNS   : -5.612
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'VGA:salVGA|vga_controller:controllerVGA|disp_ena'
-Slack : 0.438
+Slack : 0.453
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'VGA:salVGA|vga_controller:controllerVGA|disp_ena'
-Slack : -2.539
-TNS   : -32.864
+Slack : -2.846
+TNS   : -32.088
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -1.408
-TNS   : -87.619
+Slack : -1.571
+TNS   : -91.726
 
 Type  : Fast 1200mV 0C Model Setup 'VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0'
-Slack : -1.094
-TNS   : -30.902
+Slack : -1.243
+TNS   : -31.344
 
 Type  : Fast 1200mV 0C Model Setup 'microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led'
-Slack : 0.338
+Slack : 0.387
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0'
-Slack : 0.148
+Slack : 0.149
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'microprocesador:Mircoprocesador|fetch:Fetch|relojlento:u1|led'
-Slack : 0.150
+Slack : 0.149
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : 0.247
+Slack : 0.198
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'VGA:salVGA|vga_controller:controllerVGA|disp_ena'
-Slack : 0.812
+Slack : 0.517
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -114.554
+TNS   : -114.690
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'VGA:salVGA|Gen25MHz:VGAclk|clk25MHz~reg0'
 Slack : -1.000
@@ -143,7 +143,7 @@ Slack : -1.000
 TNS   : -4.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'VGA:salVGA|vga_controller:controllerVGA|disp_ena'
-Slack : 0.326
+Slack : 0.341
 TNS   : 0.000
 
 ------------------------------------------------------------

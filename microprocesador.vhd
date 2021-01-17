@@ -50,7 +50,7 @@ Decoder: entity work.decoder(behavior) port map (bus_instruc,bus_dirA,bus_dirB,s
 control: entity work.control(behavior) port map(bus_datosB,bus_dirB,selType,inmediato,s2&cin&s,ope,datB,weReg,weRam,numC,datoRam,datoGuardar);
 
 Alu: entity work.alu(arq) port map(bus_datosA,datB,ope(2),ope(3) & ope(1 downto 0),cout,numC,Csal7seg_1,Csal7seg_0);
-op<=ope; 
+op<=ope(2)&ope(3)&ope(1 downto 0); 
 
 --memoriaA: entity work.ram(behavior) port map(AddrWr, bus_dirA,not clk,clk,reset nor not clk,numC,bus_datosA);
 --memoriaB: entity work.ram(behavior) port map(AddrWr, bus_dirB,not clk,clk,reset nor not clk,numC,bus_datosB);
